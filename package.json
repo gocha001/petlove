@@ -11,10 +11,16 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "@reduxjs/toolkit": "^2.6.1",
     "modern-normalize": "^3.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-responsive": "^10.0.1",
     "react-router-dom": "^7.3.0",
+    "react-spinners": "^0.15.0",
+    "react-toastify": "^11.0.5",
+    "redux-persist": "^6.0.0",
     "vite-plugin-svg-sprite": "^0.6.2"
   },
   "devDependencies": {

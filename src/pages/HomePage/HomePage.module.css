@@ -1,0 +1,142 @@
+.home {
+  width: 375px;
+  height: 812px;
+  /* background: #f9f9f9; */
+  position: absolute;
+  top: 0;
+  z-index: -10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeContent {
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+  width: 335px;
+  height: 390px;
+  background: var(--color-yellow);
+}
+
+.homeBlock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 295px;
+  height: 222px;
+  margin-top: 118px;
+}
+
+.homeTitle {
+  width: 295px;
+  height: 144px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.homeSpan {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.homeText {
+  width: 295px;
+  height: 54px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.homePicture {
+  border-radius: 30px;
+  width: 335px;
+  height: 402px;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    width: 768px;
+    height: 1024px;
+  }
+  .homeContent {
+    border-radius: 60px;
+    width: 704px;
+    height: 496px;
+  }
+  .homeBlock {
+    width: 640px;
+    height: 274px;
+    gap: 32px;
+    margin-top: 178px;
+    align-items: flex-end;
+  }
+  .homeTitle {
+    width: 640px;
+    height: 154px;
+    /* margin-top: 178px; */
+    font-size: 80px;
+    line-height: 0.9625;
+  }
+  .homeText {
+    width: 255px;
+    height: 88px;
+    font-size: 18px;
+    line-height: 1.22222;
+  }
+  .homePicture {
+    border-radius: 60px;
+    width: 704px;
+    height: 496px;
+  }
+  .homeImg {
+    content: url("../../assets/home/home-t-1.png");
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .home {
+    width: 1280px;
+    height: 800px;
+  }
+  .homeContent {
+    border-radius: 60px;
+    width: 1216px;
+    height: 384px;
+  }
+  .homeBlock {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 1088px;
+    height: 174px;
+    gap: 73px;
+    margin-top: 178px;
+  }
+  .homeTitle {
+    width: 760px;
+    height: 174px;
+    font-size: 90px;
+    line-height: 0.96667;
+  }
+  .homeText {
+    /* width: 255px; */
+    /* height: 88px; */
+  }
+  .homePicture {
+    border-radius: 60px;
+    width: 1216px;
+    height: 384px;
+  }
+  .homeImg {
+    content: url("../../assets/home/home-d-1.png");
+  }
+}

@@ -1,0 +1,140 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  width: 295px;
+  height: 40px;
+  position: absolute;
+  top: 28px;
+  /* left: 40px; */
+}
+
+.headerLogo {
+  height: 20px;
+  /* top: 38px; */
+  /* left: 40px; */
+}
+
+.headerMenu {
+  width: 32px;
+  height: 32px;
+}
+
+.headerMenuBtn {
+  all: unset;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.headerMenuIcon {
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    width: 640px;
+    height: 50px;
+    top: 32px;
+    /* left: 64px; */
+  }
+  .headerMenu {
+    width: 36px;
+    height: 36px;
+  }
+  .headerMenuBtn {
+    width: 36px;
+    height: 36px;
+  }
+  .headerMenuIcon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    width: 1088px;
+  }
+}
+
+.headerCont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerWrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.headerMenuContent {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Ховаємо за межами екрану */
+  width: 218px; /* Ширина меню */
+  height: 812px; /* Вся висота екрану */
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out; /* Плавний виїзд */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20px;
+  padding-top: 28px;
+  padding-left: 20px;
+  z-index: 1000;
+}
+
+.headerOpenMenu {
+  right: 0;
+}
+
+.headerCloseBtn {
+  all: unset;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.headerCloseBtnIcon {
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .headerMenuContent {
+    width: 374px;
+    height: 1024px;
+    padding-top: 39px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+  .headerCloseBtn {
+    width: 36px;
+    height: 36px;
+  }
+  .headerCloseBtnIcon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.headerMenuBackground {
+  background-color: #f6b83d;
+}
+
+.headerMenuBackgroundHome {
+  background-color: #ffffff;
+}

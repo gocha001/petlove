@@ -1,0 +1,84 @@
+.mainLogoLink {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+  width: 190px;
+  height: 50px;
+}
+
+.mainLogoText {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-white);
+}
+
+.mainLogoIcon {
+  width: 44px;
+  height: 44px;
+}
+
+@media screen and (min-width: 768px) {
+  .mainLogoText {
+    font-size: 100px;
+  }
+  .mainLogoIcon {
+    width: 82px;
+    height: 82px;
+  }
+  .mainLogoLink {
+    width: 374px;
+    height: 100px;
+  }
+}
+
+.homeLogoLink {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+  width: 76px;
+  height: 20px;
+}
+
+.homeLogoText {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-white);
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-black);
+}
+
+.homeLogoIcon {
+  width: 17px;
+  height: 17px;
+}
+
+@media screen and (min-width: 768px) {
+  .homeLogoLink {
+    width: 106px;
+    height: 28px;
+  }
+  .homeLogoText {
+    font-weight: 800;
+    font-size: 28px;
+  }
+  .logoText {
+    font-weight: 800;
+    font-size: 28px;
+  }
+  .homeLogoIcon {
+    width: 23px;
+    height: 23px;
+  }
+}

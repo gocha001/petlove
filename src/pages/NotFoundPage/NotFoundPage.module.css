@@ -1,0 +1,82 @@
+.notFound {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.notFoundImg {
+  width: 335px;
+  height: 712px;
+}
+
+.notFoundContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 215px;
+  height: 82px;
+  position: absolute;
+  top: 455px;
+}
+
+.notFoundText {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+}
+
+.notFoundLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  width: 150px;
+  height: 42px;
+  background: var(--color-beige);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: var(--color-yellow);
+}
+
+@media screen and (min-width: 768px) {
+  .notFound {
+    margin-top: 114px;
+  }
+  .notFoundImg {
+    content: url("../../assets/notFound/notFound-t-1.png");
+    width: 764px;
+    height: 878px;
+  }
+  .notFoundContent {
+    width: 322px;
+    height: 96px;
+    top: 670px;
+  }
+  .notFoundText {
+    font-size: 24px;
+    line-height: 1.16667;
+  }
+  .notFoundLink {
+    width: 162px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .notFoundImg {
+    content: url("../../assets/notFound/notFound-d-1.png");
+    width: 1216px;
+    height: 654px;
+  }
+  .notFoundContent {
+    top: 550px;
+  }
+}

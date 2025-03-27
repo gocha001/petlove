@@ -13,7 +13,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  /* gap: 10px; */
   border-radius: 30px;
   padding: 12px 67px;
   width: 178px;
@@ -38,7 +37,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  /* gap: 10px; */
   border-radius: 30px;
   padding: 12px 41px;
   width: 178px;
@@ -61,7 +59,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  /* gap: 10px; */
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 30px;
   padding: 12px 67px;

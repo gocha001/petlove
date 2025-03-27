@@ -24,11 +24,13 @@ const Header = () => {
   let stroke = "black";
   let strokeClose = "white";
   let headerMenuBackground = css.headerMenuBackground;
+  let headerContainer = css.headerContainer;
 
   if (location.pathname === "/home") {
     stroke = "white";
     strokeClose = "black";
     headerMenuBackground = css.headerMenuBackgroundHome;
+    headerContainer = css.headerContainerHome;
   }
 
   const handleBackdropClick = (e) => {
@@ -52,48 +54,50 @@ const Header = () => {
 
   return (
     <div className={css.header}>
-      <div className={css.headerLogo}>
-        <Logo />
-      </div>
-      {isDesktop && <Nav />}
-      <div className={css.headerCont}>
-        {!user && !isMobile && <AuthNav />}
-        {user && isDesktop && <UserNav />}
-        {!isDesktop && (
-          <div className={css.headerMenu}>
-            <button
-              type="button"
-              onClick={openMenu}
-              className={css.headerMenuBtn}
+      <div className={headerContainer}>
+        <div className={css.headerLogo}>
+          <Logo />
+        </div>
+        {isDesktop && <Nav />}
+        <div className={css.headerCont}>
+          {!user && !isMobile && <AuthNav />}
+          {user && isDesktop && <UserNav />}
+          {!isDesktop && (
+            <div className={css.headerMenu}>
+              <button
+                type="button"
+                onClick={openMenu}
+                className={css.headerMenuBtn}
+              >
+                <svg className={css.headerMenuIcon} fill="none" stroke={stroke}>
+                  <use href="/icons/menu.svg#icon-menu-01" />
+                </svg>
+              </button>
+            </div>
+          )}
+        </div>
+        {isOpenMenu && (
+          <div onClick={handleBackdropClick} className={css.headerWrapper}>
+            <div
+              className={`${css.headerMenuContent} ${headerMenuBackground} ${
+                isOpenMenu ? css.headerOpenMenu : ""
+              }`}
             >
-              <svg className={css.headerMenuIcon} fill="none" stroke={stroke}>
-                <use href="/icons/menu.svg#icon-menu-01" />
-              </svg>
-            </button>
+              <button onClick={closeMenu} className={css.headerCloseBtn}>
+                <svg
+                  className={css.headerCloseBtnIcon}
+                  fill="none"
+                  stroke={strokeClose}
+                >
+                  <use href="/icons/icons.svg#icon-x" />
+                </svg>
+              </button>
+              <Nav closeMenu={closeMenu} />
+              {!user && isMobile && <AuthNav closeMenu={closeMenu} />}
+            </div>
           </div>
         )}
       </div>
-      {isOpenMenu && (
-        <div onClick={handleBackdropClick} className={css.headerWrapper}>
-          <div
-            className={`${css.headerMenuContent} ${headerMenuBackground} ${
-              isOpenMenu ? css.headerOpenMenu : ""
-            }`}
-          >
-            <button onClick={closeMenu} className={css.headerCloseBtn}>
-              <svg
-                className={css.headerCloseBtnIcon}
-                fill="none"
-                stroke={strokeClose}
-              >
-                <use href="/icons/icons.svg#icon-x" />
-              </svg>
-            </button>
-            <Nav closeMenu={closeMenu} />
-            {!user && isMobile && <AuthNav closeMenu={closeMenu} />}
-          </div>
-        </div>
-      )}
     </div>
   );
 };

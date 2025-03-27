@@ -1,0 +1,41 @@
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.titleContainerAuth {
+  margin-top: 0;
+  margin-left: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.titleText {
+  display: flex;
+  align-items: flex-start;
+  width: 335px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+@media screen and (min-width: 768px) {
+  .titleContainer {
+    justify-content: flex-start;
+  }
+  .titleText {
+    font-size: 54px;
+    line-height: 1;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .titleText {
+    font-size: 54px;
+    line-height: 1;
+  }
+}

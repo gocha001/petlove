@@ -1,0 +1,81 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden !important;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 12px;
+  flex-direction: row;
+  gap: 10px;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  width: 100%;
+  width: 335px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+  overflow: hidden !important;
+}
+
+.searchInput {
+  outline: none;
+  border: none;
+  background-color: transparent !important;
+  overflow: hidden !important;
+  flex-shrink: 1;
+}
+
+.searchInput:-webkit-autofill,
+.searchInput:-webkit-autofill:hover,
+.searchInput:-webkit-autofill:focus,
+.searchInput:-webkit-autofill:active {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.searchBtns {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  padding-right: 12px;
+}
+
+.searchSubmitBtn,
+.searchClearBtn {
+  all: unset;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.searchSubmitBtnIcon,
+.searchClearBtnIcon {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .search {
+    justify-content: flex-end;
+  }
+  .searchForm {
+    width: 230px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .searchInput {
+    width: 154px;
+  }
+}

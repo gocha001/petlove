@@ -1,0 +1,144 @@
+.newsItem {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 359px;
+}
+
+.newsItemImg {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 335px;
+  height: 190px;
+}
+
+.newsItemContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 19px;
+  width: 100%;
+  max-width: 335px;
+  height: 149px;
+}
+
+.newsItemContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: left;
+  gap: 12px;
+  width: 100%;
+  max-width: 335px;
+  height: 112px;
+}
+
+.newsItemTitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.newsItemText {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.newsItemInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.newsItemDate {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.newsItemLink {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #f6b83d;
+}
+
+@media screen and (min-width: 768px) {
+  .newsItem {
+    border-radius: 15px;
+    width: 340px;
+    height: 476px;
+    gap: 28px;
+  }
+  .newsItemImg {
+    border-radius: 15px;
+    width: 340px;
+    height: 226px;
+    max-width: none;
+  }
+  .newsItemContainer {
+    width: 340px;
+    height: 194px;
+    gap: 28px;
+    max-width: none;
+  }
+  .newsItemContent {
+    width: 340px;
+    height: 146px;
+    max-width: none;
+    gap: 14px;
+  }
+  .newsItemTitle {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .newsItemText {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .newsItemInfo {
+    width: 340px;
+    height: 20px;
+  }
+  .newsItemDate {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .newsItemLink {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .newsItem {
+    width: 361px;
+    height: 476px;
+  }
+  .newsItemImg {
+    width: 361px;
+  }
+  .newsItemContainer {
+    width: 361px;
+  }
+  .newsItemContent {
+    width: 361px;
+  }
+  .newsItemInfo {
+    width: 361px;
+  }
+}

@@ -1,3 +1,32 @@
-.friendsContainer {
+.friends {
   width: 100%;
+}
+
+.friendsTitle {
+  display: flex;
+  width: 100%;
+  margin-top: 54px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .friends {
+    width: 768px;
+  }
+  .friendsTitle {
+    padding-left: 32px;
+    margin-top: 85px;
+    margin-bottom: 44px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .friends {
+    width: 1280px;
+  }
+  .friendsTitle {
+    padding-left: 64px;
+    margin-top: 96px;
+    margin-bottom: 60px;
+  }
 }

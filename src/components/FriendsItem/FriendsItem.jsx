@@ -1,5 +1,5 @@
-const FriendsItem = () => {
-  return <div>FriendsItem</div>;
+const FriendsItem = ({ friend }) => {
+  return <div>{friend.title}</div>;
 };
 
 export default FriendsItem;

@@ -68,7 +68,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             fill="black"
             stroke="black"
           >
-            <use href="/public/icons/symbol-defs.svg#icon-fi-rr-angle-small-left" />
+            <use href="/icons/symbol-defs.svg#icon-fi-rr-angle-small-left" />
           </svg>
         </button>
       </div>
@@ -90,7 +90,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           disabled={currentPage === totalPages}
         >
           <svg fill="black" stroke="black">
-            <use href="/public/icons/symbol-defs.svg#icon-fi-rr-angle-small-left" />
+            <use href="/icons/symbol-defs.svg#icon-fi-rr-angle-small-left" />
           </svg>
         </button>
         <button
@@ -98,10 +98,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           disabled={currentPage === totalPages}
         >
           <svg fill="black" stroke="black">
-            <use href="/public/icons/symbol-defs.svg#icon-fi-rr-angle-small-left" />
+            <use href="/icons/symbol-defs.svg#icon-fi-rr-angle-small-left" />
           </svg>
           <svg fill="black" stroke="black">
-            <use href="/public/icons/symbol-defs.svg#icon-fi-rr-angle-small-left" />
+            <use href="/icons/symbol-defs.svg#icon-fi-rr-angle-small-left" />
           </svg>
         </button>
       </div>

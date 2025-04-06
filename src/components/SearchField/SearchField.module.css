@@ -26,12 +26,36 @@
   overflow: hidden !important;
 }
 
+.searchFormNotice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 12px;
+  flex-direction: row;
+  gap: 10px;
+  border: none;
+  border-radius: 30px;
+  width: 100%;
+  width: 295px;
+  height: 42px;
+  overflow: hidden !important;
+}
+
 .searchInput {
   outline: none;
   border: none;
   background-color: transparent !important;
   overflow: hidden !important;
   flex-shrink: 1;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.searchInput::placeholder {
+  color: #262626;
 }
 
 .searchInput:-webkit-autofill,
@@ -74,6 +98,10 @@
     height: 48px;
     font-size: 16px;
     line-height: 1.25;
+  }
+  .searchFormNotice {
+    width: 265px;
+    height: 48px;
   }
   .searchInput {
     width: 154px;

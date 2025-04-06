@@ -17,16 +17,13 @@ const newsSlice = createSlice({
   reducers: {
     resetNews: (state) => {
       state.news = [];
-      state.search = "";
       state.page = 1;
     },
     searchNews: (state, action) => {
       state.search = action.payload;
-      console.log(state.search);
     },
-    changePage: (state, action) => {
+    changePageNews: (state, action) => {
       state.page = action.payload;
-      console.log(state.page);
     },
   },
   extraReducers: (builder) => {
@@ -39,8 +36,6 @@ const newsSlice = createSlice({
         state.isLoading = false;
         state.news = action.payload.results;
         state.totalPages = action.payload.totalPages;
-        console.log(state.news);
-        console.log(state.page, state.totalPages);
       })
       .addCase(fetchNews.rejected, (state, action) => {
         state.isLoading = false;
@@ -52,4 +47,4 @@ const newsSlice = createSlice({
 export const newsReducer = newsSlice.reducer;
 export const { resetNews } = newsSlice.actions;
 export const { searchNews } = newsSlice.actions;
-export const { changePage } = newsSlice.actions;
+export const { changePageNews } = newsSlice.actions;

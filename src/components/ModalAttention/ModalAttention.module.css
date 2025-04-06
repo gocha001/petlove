@@ -1,0 +1,172 @@
+.modalAttention {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  width: 335px;
+  height: 394px;
+  background: #fff;
+  position: relative;
+}
+
+.closeBtn {
+  all: unset;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtnIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.img {
+  width: 80px;
+  height: 80px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 295px;
+  height: 214px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 295px;
+  height: 148px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #2b2b2a;
+}
+
+.btns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  width: 272px;
+  height: 42px;
+}
+
+.linkLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  /* gap: 10px; */
+  border-radius: 30px;
+  /* padding: 12px 48px; */
+  width: 135px;
+  height: 42px;
+  background: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.linkLogin:hover {
+  background: #f9b020;
+}
+
+.linkRegister {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  /* gap: 10px; */
+  border-radius: 30px;
+  /* padding: 12px 24px; */
+  width: 129px;
+  height: 42px;
+  background: #fff4df;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+}
+
+.linkRegister:hover {
+  background: #fbe7c1;
+}
+
+@media screen and (min-width: 768px) {
+  .modalAttention {
+    width: 466px;
+    height: 434px;
+  }
+  .image {
+    margin-top: 60px;
+  }
+  .container {
+    width: 346px;
+    gap: 28px;
+  }
+  .content {
+    width: 346px;
+    height: 138px;
+  }
+  .title {
+    font-size: 24px;
+    line-height: 1.16667;
+  }
+  .btns {
+    width: 288px;
+    height: 48px;
+  }
+  .linkLogin {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .linkRegister {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}

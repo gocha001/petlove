@@ -20,17 +20,12 @@ const authPersistorConfig = {
   storage,
 };
 
-const noticesPersistorConfig = {
-  key: "notices",
-  storage,
-};
-
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistorConfig, authReducer),
     friends: friendsReducer,
     news: newsReducer,
-    notices: persistReducer(noticesPersistorConfig, noticesReducer),
+    notices: noticesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

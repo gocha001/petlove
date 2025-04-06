@@ -8,6 +8,7 @@ import mainT1 from "../../assets/main/main-t-1.png";
 import mainT2 from "../../assets/main/main-t-2.png";
 import mainM1 from "../../assets/main/main-m-1.png";
 import mainM2 from "../../assets/main/main-m-2.png";
+
 const Loader = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [progress, setProgress] = useState(0);

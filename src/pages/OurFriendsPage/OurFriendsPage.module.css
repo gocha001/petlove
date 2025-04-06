@@ -9,6 +9,10 @@
   margin-bottom: 40px;
 }
 
+.error {
+  color: red;
+}
+
 @media screen and (min-width: 768px) {
   .friends {
     width: 768px;

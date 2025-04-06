@@ -10,6 +10,7 @@ const AuthNav = ({ closeMenu }) => {
   if (location.pathname === "/home") {
     authNavLinkLogin = css.authNavLinkLoginHome;
   }
+
   return (
     <div className={css.authNav}>
       <NavLink to="login" className={authNavLinkLogin} onClick={closeMenu}>

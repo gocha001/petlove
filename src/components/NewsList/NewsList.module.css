@@ -13,6 +13,11 @@
   flex-shrink: 1;
 }
 
+.notFound {
+  font-size: 14px;
+  color: red;
+}
+
 @media screen and (min-width: 768px) {
   .newsList {
     width: 768px;

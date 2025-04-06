@@ -52,6 +52,18 @@ const Header = () => {
     };
   }, [closeMenu]);
 
+  useEffect(() => {
+    if (isOpenMenu) {
+      document.body.classList.add(`${css.noScroll}`);
+    } else {
+      document.body.classList.remove(`${css.noScroll}`);
+    }
+
+    return () => {
+      document.body.classList.remove(`${css.noScroll}`);
+    };
+  }, [isOpenMenu]);
+
   return (
     <div className={css.header}>
       <div className={headerContainer}>

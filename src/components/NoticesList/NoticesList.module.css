@@ -1,0 +1,49 @@
+.noticesList {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.noticesListContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 335px;
+  flex-shrink: 1;
+}
+
+.noticesListItem {
+  width: 100%;
+  max-width: 100%;
+  flex-shrink: 1;
+}
+
+.notFound {
+  font-size: 14px;
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .noticesList {
+    width: 768px;
+  }
+  .noticesListContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 704px;
+    gap: 20px 22px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .noticesList {
+    width: 1280px;
+  }
+  .noticesListContainer {
+    grid-template-columns: repeat(3, 1fr);
+    width: 1153px;
+    gap: 40px 32px;
+  }
+}

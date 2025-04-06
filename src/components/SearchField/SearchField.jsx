@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import css from "./SearchField.module.css";
+import { useLocation } from "react-router-dom";
 
 const searchSchema = yup.object().shape({
   query: yup.string().trim().max(100, "Maximum length 100 characters"),
@@ -24,9 +25,17 @@ const SearchField = ({ onSearch }) => {
     onSearch("");
   };
 
+  const location = useLocation();
+
+  let searchForm = css.searchForm;
+
+  if (location.pathname === "/notices") {
+    searchForm = css.searchFormNotice;
+  }
+
   return (
     <div className={css.search}>
-      <form onSubmit={handleSubmit(onSubmit)} className={css.searchForm}>
+      <form onSubmit={handleSubmit(onSubmit)} className={searchForm}>
         <input
           type="text"
           placeholder="Search"

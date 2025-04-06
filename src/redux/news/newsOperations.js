@@ -1,4 +1,4 @@
-import { createAsyncThunk, isRejectedWithValue } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const Api = axios.create({
@@ -15,9 +15,9 @@ export const fetchNews = createAsyncThunk(
       const limit = state.news.limit;
 
       const response = await Api.get(`/news`, {
-        params: { keyword: keyword, page: page, limit: limit },
+        params: { keyword, page, limit },
       });
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
       return rejectedWithValue(error.response?.data);

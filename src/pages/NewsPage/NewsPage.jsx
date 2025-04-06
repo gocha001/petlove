@@ -4,13 +4,14 @@ import NewsList from "../../components/NewsList/NewsList.jsx";
 import css from "./NewsPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  changePage,
+  changePageNews,
   resetNews,
   searchNews,
 } from "../../redux/news/newsSlice.js";
 import { fetchNews } from "../../redux/news/newsOperations.js";
 import Pagination from "../../components/Pagination/Pagination.jsx";
 import {
+  selectError,
   selectPage,
   selectTotalPages,
 } from "../../redux/news/newsSelectors.js";
@@ -18,19 +19,21 @@ import {
 const NewsPage = () => {
   const page = useSelector(selectPage);
   const totalPages = useSelector(selectTotalPages);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   const onSearch = async (data) => {
     dispatch(resetNews());
     dispatch(searchNews(data));
-    console.log(data);
     dispatch(fetchNews());
   };
 
   const onPageChange = async (data) => {
-    dispatch(changePage(data));
+    dispatch(changePageNews(data));
     dispatch(fetchNews());
   };
+
+  if (error) return <div className={css.error}>Error: {error}</div>;
 
   return (
     <div className={css.newsPage}>

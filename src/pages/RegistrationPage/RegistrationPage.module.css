@@ -1,0 +1,97 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  max-width: 335px;
+  width: 100%;
+  height: 422px;
+  background-color: #fff;
+  padding: 27px 20px;
+}
+
+.registerTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  width: 295px;
+}
+
+.registerText {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.registerLinkBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.registerLinkText {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.registerLink {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #f6b83d;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .registerContainer {
+    border-radius: 60px;
+    width: 704px;
+    max-width: none;
+    height: 560px;
+  }
+  .registerTitle {
+    width: 424px;
+  }
+  .registerText {
+    font-size: 18px;
+    line-height: 1.22222;
+  }
+  .registerLinkText {
+    font-size: 14px;
+    line-height: 1.42857;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .register {
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+  }
+  .registerContainer {
+    width: 592px;
+    height: 654px;
+    margin-top: 32px;
+    padding-top: 77px;
+  }
+  .registerTitle {
+    width: 426px;
+    gap: 16px;
+  }
+}

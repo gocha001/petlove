@@ -1,13 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-export const Api = axios.create({
-  baseURL: "https://petlove.b.goit.study/api",
-});
+import { Api } from "../auth/authOperations.js";
 
 export const fetchNews = createAsyncThunk(
   "news/fetchNews",
-  async (_, { getState, rejectedWithValue }) => {
+  async (_, { getState, thunkAPI }) => {
     try {
       const state = getState();
       const keyword = state.news.search;
@@ -20,7 +16,7 @@ export const fetchNews = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      return rejectedWithValue(error.response?.data);
+      return thunkAPI.rejectWithValue(error.response?.data);
     }
   }
 );

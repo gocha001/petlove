@@ -1,0 +1,98 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  max-width: 335px;
+  width: 100%;
+  height: 422px;
+  background-color: #fff;
+  padding: 60px 20px;
+}
+
+.loginTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  width: 295px;
+}
+
+.loginText {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: #262626;
+  text-align: left;
+}
+
+.loginLinkBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.loginLinkText {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.loginLink {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #f6b83d;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 760px) {
+  .loginContainer {
+    width: 704px;
+    height: 560px;
+    border-radius: 60px;
+    max-width: none;
+  }
+  .loginTitle {
+    gap: 16px;
+    width: 424px;
+  }
+  .loginText {
+    font-size: 18px;
+    line-height: 1.22222;
+  }
+  .loginLinkText {
+    font-size: 14px;
+    line-height: 1.42857;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .login {
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+  }
+  .loginContainer {
+    width: 592px;
+    height: 654px;
+    margin-top: 32px;
+  }
+  .loginTitle {
+    width: 424px;
+  }
+}

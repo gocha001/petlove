@@ -2,6 +2,7 @@ import css from "./ModalAttention.module.css";
 import dog1 from "../../assets/pets/dog-1.png";
 import dog2 from "../../assets/pets/dog-2.png";
 import { Link } from "react-router-dom";
+
 const ModalAttention = ({ closeModal }) => {
   return (
     <div className={css.modalAttention}>

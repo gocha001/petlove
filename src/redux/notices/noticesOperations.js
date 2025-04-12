@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { Api } from "../news/newsOperations";
+import { Api } from "../auth/authOperations.js";
 
 export const fetchNotices = createAsyncThunk(
   "notices/fetchNotices",
-  async (_, { getState, rejectedWithValue }) => {
+  async (_, { getState, thunkAPI }) => {
     try {
       const state = getState();
       const keyword = state.notices.search;
@@ -32,53 +32,53 @@ export const fetchNotices = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      return rejectedWithValue(error.response?.data);
+      return thunkAPI.rejectWithValue(error.response?.data);
     }
   }
 );
 
 export const fetchCategories = createAsyncThunk(
   "categories/fetchCategories",
-  async (_, rejectedWithValue) => {
+  async (_, thunkAPI) => {
     try {
       const response = await Api.get(`/notices/categories`);
 
       return response.data;
     } catch (error) {
-      return rejectedWithValue(error.response?.data);
+      return thunkAPI.rejectWithValue(error.response?.data);
     }
   }
 );
 
 export const fetchSex = createAsyncThunk(
   "sex/fetchSex",
-  async (_, rejectedWithValue) => {
+  async (_, thunkAPI) => {
     try {
       const response = await Api.get(`/notices/sex`);
 
       return response.data;
     } catch (error) {
-      return rejectedWithValue(error.response?.data);
+      return thunkAPI.rejectWithValue(error.response?.data);
     }
   }
 );
 
 export const fetchSpecies = createAsyncThunk(
   "species/fetchSpecies",
-  async (_, rejectedWithValue) => {
+  async (_, thunkAPI) => {
     try {
       const response = await Api.get(`/notices/species`);
 
       return response.data;
     } catch (error) {
-      return rejectedWithValue(error.response?.data);
+      return thunkAPI.rejectWithValue(error.response?.data);
     }
   }
 );
 
 export const fetchCities = createAsyncThunk(
   "cities/fetchCities",
-  async (_, { getState, rejectedWithValue }) => {
+  async (_, { getState, thunkAPI }) => {
     try {
       const state = getState();
       const keyword = state.notices.location;
@@ -91,7 +91,7 @@ export const fetchCities = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      return rejectedWithValue(error.response?.data);
+      return thunkAPI.rejectWithValue(error.response?.data);
     }
   }
 );

@@ -1,0 +1,119 @@
+.loginForm {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 40px;
+  width: 295px;
+  margin-top: 24px;
+}
+
+.loginContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 295px;
+}
+
+.loginBlock {
+  position: relative;
+}
+
+.loginInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  width: 295px;
+  height: 42px;
+  padding-left: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.loginBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 30px;
+  padding: 12px 99px;
+  width: 295px;
+  height: 42px;
+  background: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: -10px;
+}
+
+.password {
+  background: none;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+
+.passwordIcon {
+  width: 18px;
+  height: 18px;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: rgba(38, 38, 38, 0.5) !important;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #f6b83d;
+}
+
+@media screen and (min-width: 760px) {
+  .loginForm {
+    width: 424px;
+    gap: 64px;
+    margin-top: 32px;
+  }
+  .loginContainer {
+    width: 424px;
+    gap: 16px;
+  }
+  .loginInput {
+    width: 424px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .loginBtn {
+    width: 424px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .password {
+    top: 7px;
+  }
+}

@@ -2,15 +2,16 @@ import Logo from "../Logo/Logo.jsx";
 import Nav from "../Nav/Nav.jsx";
 import AuthNav from "../AuthNav/AuthNav.jsx";
 import UserNav from "../UserNav/UserNav.jsx";
-import { selectUser } from "../../redux/auth/authSelectors.js";
+import { selectToken } from "../../redux/auth/authSelectors.js";
 import { useSelector } from "react-redux";
 import css from "./Header.module.css";
 import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import LogOutBtn from "../LogOutBtn/LogOutBtn.jsx";
 
 const Header = () => {
-  const user = useSelector(selectUser);
+  const token = useSelector(selectToken);
 
   const isDesktop = useMediaQuery({ minWidth: 1280 });
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -72,8 +73,8 @@ const Header = () => {
         </div>
         {isDesktop && <Nav />}
         <div className={css.headerCont}>
-          {!user && !isMobile && <AuthNav />}
-          {user && isDesktop && <UserNav />}
+          {!token && !isMobile && <AuthNav />}
+          {token && <UserNav />}
           {!isDesktop && (
             <div className={css.headerMenu}>
               <button
@@ -105,7 +106,11 @@ const Header = () => {
                 </svg>
               </button>
               <Nav closeMenu={closeMenu} />
-              {!user && isMobile && <AuthNav closeMenu={closeMenu} />}
+              <div className={css.headerMenuLog}>
+                {!token && isMobile && <AuthNav closeMenu={closeMenu} />}
+                {token && isMobile && <LogOutBtn />}
+                {!isMobile && <div></div>}
+              </div>
             </div>
           </div>
         )}

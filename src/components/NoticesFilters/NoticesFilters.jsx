@@ -32,7 +32,10 @@ const NoticesFilters = () => {
   const speciesList = useSelector(selectSpeciesList);
   const locationList = useSelector(selectLocationList);
 
-  const { handleSubmit } = useForm({
+  const {
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(noticesSchema),
   });
 
@@ -203,6 +206,7 @@ const NoticesFilters = () => {
                 ))}
               </ul>
             )}
+            <p className={css.error}>{errors.category?.message}</p>
           </div>
 
           <div className={css.sexContainer}>
@@ -225,6 +229,7 @@ const NoticesFilters = () => {
                 ))}
               </ul>
             )}
+            <p className={css.error}>{errors.sex?.message}</p>
           </div>
         </div>
 
@@ -254,6 +259,7 @@ const NoticesFilters = () => {
                 </ul>
               </div>
             )}
+            <p className={css.error}>{errors.species?.message}</p>
           </div>
 
           <div className={css.locationContainer}>
@@ -301,6 +307,7 @@ const NoticesFilters = () => {
                 ))}
               </ul>
             )}
+            <p className={css.error}>{errors.location?.message}</p>
           </div>
         </div>
 

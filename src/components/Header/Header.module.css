@@ -49,6 +49,10 @@
   height: 32px;
 }
 
+.headerMenuLog {
+  margin-bottom: 40px;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     height: 50px;
@@ -119,6 +123,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding-right: 20px;
   padding-top: 28px;
   padding-left: 20px;
@@ -147,7 +152,6 @@
 @media screen and (min-width: 768px) {
   .headerMenuContent {
     width: 374px;
-    /* height: 1024px; */
     padding-top: 39px;
     padding-right: 32px;
     padding-left: 32px;

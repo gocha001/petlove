@@ -1,0 +1,60 @@
+.logOutBtnGeneral {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 30px;
+  width: 178px;
+  height: 42px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logOutBtn:hover {
+  background: #fff4df;
+  color: #f6b83d;
+}
+
+.logOutBtn {
+  background: #f6b83d;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 30px;
+  color: #fff;
+}
+
+.logOutBtnHome {
+  background: #f6b83d;
+  color: #262626;
+}
+
+.logOutBtnHome:hover {
+  background: #f9b020;
+}
+
+.logOutModal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+@media screen and (min-width: 768px) {
+  .logOutBtnGeneral {
+    height: 50px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logOutBtnGeneral {
+    width: 136px;
+  }
+}

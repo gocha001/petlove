@@ -1,14 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { Api } from "../news/newsOperations";
+import { Api } from "../auth/authOperations.js";
 
 export const fetchFriends = createAsyncThunk(
   "friends/fetchFriends",
-  async (_, rejectedWithValue) => {
+  async (_, thunkAPI) => {
     try {
       const response = await Api.get(`/friends`);
       return response.data;
     } catch (error) {
-      return rejectedWithValue(error.response?.data);
+      return thunkAPI.rejectWithValue(error.response?.data);
     }
   }
 );

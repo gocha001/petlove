@@ -9,7 +9,13 @@ const searchSchema = yup.object().shape({
 });
 
 const SearchField = ({ onSearch }) => {
-  const { register, handleSubmit, reset, watch } = useForm({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(searchSchema),
     defaultValues: { query: "" },
   });
@@ -65,6 +71,7 @@ const SearchField = ({ onSearch }) => {
           </button>
         </div>
       </form>
+      <p className={css.error}>{errors.query?.message}</p>
     </div>
   );
 };

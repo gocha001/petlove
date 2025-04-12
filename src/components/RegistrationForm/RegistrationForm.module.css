@@ -1,0 +1,204 @@
+.registerForm {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: 295px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.registerContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 295px;
+}
+
+.registerBlock {
+  position: relative;
+}
+
+.registerInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  width: 295px;
+  height: 42px;
+  padding-left: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.registerInputError {
+  display: flex;
+  align-items: flex-start;
+  border-color: red;
+}
+
+.registerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 30px;
+  width: 295px;
+  height: 42px;
+  background: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.error {
+  margin-bottom: -10px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #ef2447;
+  text-align: left;
+}
+
+.password {
+  background: none;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+
+.passwordIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.resetBtn {
+  background: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+}
+
+.resetIcon {
+  width: 30px;
+  height: 30px;
+  stroke: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.checkIcon {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 10px;
+  right: 32px;
+}
+
+.checkIconEmail {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+}
+
+.checkText {
+  color: green;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-align: left;
+}
+
+.registerInputCheck {
+  border-color: green;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #f6b83d;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: rgba(38, 38, 38, 0.5) !important;
+}
+
+@media screen and (min-width: 768px) {
+  .registerForm {
+    width: 424px;
+    gap: 32px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  .registerContainer {
+    width: 424px;
+    gap: 16px;
+  }
+  .registerInput {
+    width: 424px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .registerBtn {
+    width: 424px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .password {
+    top: 6px;
+    right: 15px;
+  }
+  .passwordIcon {
+    width: 22px;
+    height: 22px;
+  }
+  .checkIcon {
+    top: 14px;
+    right: 40px;
+  }
+  .checkIconEmail {
+    top: 14px;
+  }
+  .error {
+    font-size: 12px;
+    line-height: 1.16667;
+  }
+  .checkText {
+    font-size: 12px;
+    line-height: 1.16667;
+  }
+  .resetIcon {
+    top: 4px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .registerForm {
+    margin-bottom: 16px;
+  }
+}

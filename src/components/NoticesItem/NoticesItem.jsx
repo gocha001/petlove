@@ -3,10 +3,10 @@ import css from "./NoticesItem.module.css";
 import ModalNotice from "../ModalNotice/ModalNotice.jsx";
 import ModalAttention from "../ModalAttention/ModalAttention.jsx";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../redux/auth/authSelectors";
+import { selectToken } from "../../redux/auth/authSelectors";
 
 const NoticesItem = ({ notice }) => {
-  const user = useSelector(selectUser);
+  const token = useSelector(selectToken);
 
   const [isOpenModal, setIsOpenModal] = useState(false);
   const openModal = () => setIsOpenModal(true);
@@ -121,8 +121,8 @@ const NoticesItem = ({ notice }) => {
       </div>
       {isOpenModal && (
         <div onClick={handleBackdropClick} className={css.noticeWrapper}>
-          {user && <ModalNotice closeModal={closeModal} />}
-          {!user && <ModalAttention closeModal={closeModal} />}
+          {token && <ModalNotice closeModal={closeModal} />}
+          {!token && <ModalAttention closeModal={closeModal} />}
         </div>
       )}
     </div>

@@ -6,7 +6,6 @@
   gap: 10px;
   width: 119px;
   height: 164px;
-  margin-top: 176px;
 }
 
 .homeNavLink {
@@ -45,6 +44,11 @@
   white-space: nowrap;
 }
 
+.navLink:hover {
+  background: #fff4df;
+  color: #f6b83d;
+}
+
 .navActive {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -53,7 +57,6 @@
   .nav {
     width: 120px;
     height: 170px;
-    margin-top: 294px;
   }
   .navLink {
     width: 120px;

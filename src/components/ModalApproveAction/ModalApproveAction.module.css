@@ -1,0 +1,133 @@
+.modalApproveAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  width: 335px;
+  height: 270px;
+  background: #fff;
+  position: relative;
+}
+
+.closeBtn {
+  all: unset;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtnIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.img {
+  width: 80px;
+  height: 80px;
+}
+
+.modalApproveActionTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.modalApproveActionBtns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  width: 279px;
+  height: 42px;
+  margin-top: 28px;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 30px;
+  border: none;
+  width: 137px;
+  height: 42px;
+  background: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.logoutBtn:hover {
+  background: #f9b020;
+}
+
+.cancelBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 30px;
+  border: none;
+  width: 134px;
+  height: 42px;
+  background: rgba(38, 38, 38, 0.05);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.cancelBtn:hover {
+  background: #fbe7c1;
+}
+
+@media screen and (min-width: 768px) {
+  .modalApproveAction {
+    width: 448px;
+    height: 364px;
+  }
+  .image {
+    margin-top: 80px;
+  }
+  .modalApproveActionTitle {
+    font-size: 24px;
+    line-height: 1.16667;
+  }
+  .modalApproveActionBtns {
+    width: 288px;
+    height: 48px;
+  }
+  .logoutBtn {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .cancelBtn {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}

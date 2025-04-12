@@ -1,5 +1,6 @@
 .search {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -18,10 +19,6 @@
   width: 100%;
   width: 335px;
   height: 42px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.28571;
-  letter-spacing: -0.03em;
   color: rgba(38, 38, 38, 0.5);
   overflow: hidden !important;
 }
@@ -38,7 +35,13 @@
   width: 100%;
   width: 295px;
   height: 42px;
+  color: rgba(38, 38, 38, 0.5);
   overflow: hidden !important;
+}
+
+.searchFormContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .searchInput {
@@ -106,4 +109,8 @@
   .searchInput {
     width: 154px;
   }
+}
+
+.error {
+  color: red;
 }

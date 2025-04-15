@@ -5,7 +5,7 @@ export const Api = axios.create({
   baseURL: "https://petlove.b.goit.study/api",
 });
 
-const setAuthHeader = (token) => {
+export const setAuthHeader = (token) => {
   Api.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
@@ -51,3 +51,16 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(message);
   }
 });
+
+export const currentUser = createAsyncThunk(
+  "auth/currentUser",
+  async (_, thunkAPI) => {
+    try {
+      const response = await Api.get(`users/current`);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response?.data);
+    }
+  }
+);

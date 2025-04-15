@@ -95,3 +95,45 @@ export const fetchCities = createAsyncThunk(
     }
   }
 );
+
+export const fetchNoticesId = createAsyncThunk(
+  "noticesId/fetchNoticesId",
+  async (id, thunkAPI) => {
+    try {
+      console.log(id);
+      const response = await Api.get(`/notices/${id}`);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response?.data);
+    }
+  }
+);
+
+export const favoritesAdd = createAsyncThunk(
+  "add/favoritesAdd",
+  async (id, thunkAPI) => {
+    try {
+      console.log(id);
+      const response = await Api.post(`notices/favorites/add/${id}`);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response?.data);
+    }
+  }
+);
+
+export const favoritesDelete = createAsyncThunk(
+  "delete/favoritesDelete",
+  async (id, thunkAPI) => {
+    try {
+      console.log(id);
+      const response = await Api.delete(`notices/favorites/remove/${id}`);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response?.data);
+    }
+  }
+);

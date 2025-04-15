@@ -53,6 +53,16 @@
   margin-bottom: 40px;
 }
 
+.logOutModal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     height: 50px;

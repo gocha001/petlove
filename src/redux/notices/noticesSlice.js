@@ -5,6 +5,9 @@ import {
   fetchNotices,
   fetchSex,
   fetchSpecies,
+  fetchNoticesId,
+  favoritesAdd,
+  favoritesDelete,
 } from "./noticesOperations";
 
 const initialState = {
@@ -20,9 +23,12 @@ const initialState = {
   speciesList: [],
   sexList: [],
   locationList: [],
+  noticeId: {},
+  favoritesId: [],
   page: 1,
   totalPages: 1,
   limit: 6,
+  noticeId: {},
   isLoading: false,
   error: null,
 };
@@ -76,13 +82,31 @@ const noticesSlice = createSlice({
         state.isLoading = false;
         state.locationList = action.payload;
       })
+      .addCase(fetchNoticesId.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.noticeId = action.payload;
+        console.log(state.noticeId);
+      })
+      .addCase(favoritesAdd.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.favoritesId = action.payload;
+        console.log(state.favoritesId);
+      })
+      .addCase(favoritesDelete.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.favoritesId = action.payload;
+        console.log(state.favoritesId);
+      })
       .addMatcher(
         isAnyOf(
           fetchNotices.pending,
           fetchCategories.pending,
           fetchSex.pending,
           fetchSpecies.pending,
-          fetchCities.pending
+          fetchCities.pending,
+          fetchNoticesId.pending,
+          favoritesAdd.pending,
+          favoritesDelete.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -95,7 +119,10 @@ const noticesSlice = createSlice({
           fetchCategories.rejected,
           fetchSex.rejected,
           fetchSpecies.rejected,
-          fetchCities.rejected
+          fetchCities.rejected,
+          fetchNoticesId.rejected,
+          favoritesAdd.rejected,
+          favoritesDelete.rejected
         ),
         (state, action) => {
           state.isLoading = false;

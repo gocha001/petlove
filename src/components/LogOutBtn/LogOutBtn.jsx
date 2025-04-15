@@ -2,9 +2,12 @@ import css from "./LogOutBtn.module.css";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ModalApproveAction from "../ModalApproveAction/ModalApproveAction.jsx";
+import useBodyScrollLock from "../../utils/useBodyScrollLock.js";
+import { useMediaQuery } from "react-responsive";
 
-const LogOutBtn = () => {
+const LogOutBtn = ({ openModal }) => {
   const location = useLocation();
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   let logOutBtn = css.logOutBtn;
 
@@ -13,19 +16,22 @@ const LogOutBtn = () => {
   }
 
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const openModal = () => setIsOpenModal(true);
-  const closeModal = () => setIsOpenModal(false);
+  useBodyScrollLock(isOpenModal);
+
+  const modalOpen = () => setIsOpenModal(true);
+
+  const modalClose = () => setIsOpenModal(false);
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
-      closeModal();
+      modalClose();
     }
   };
 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
-        closeModal();
+        modalClose();
       }
     };
     document.addEventListener("keydown", handleKeyDown);
@@ -33,30 +39,22 @@ const LogOutBtn = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [closeModal]);
-
-  useEffect(() => {
-    if (isOpenModal) {
-      document.body.style.overflow = "hidden";
-      document.body.style.paddingRight = "16px";
-    } else {
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "0";
-    }
-  }, [isOpenModal]);
+  }, [modalClose]);
 
   return (
     <div>
       <button
         className={`${css.logOutBtnGeneral} ${logOutBtn}`}
         type="button"
-        onClick={openModal}
+        onClick={() => {
+          `${isMobile ? openModal() : modalOpen()}`;
+        }}
       >
         Log out
       </button>
-      {isOpenModal && (
+      {isOpenModal && !isMobile && (
         <div className={css.logOutModal} onClick={handleBackdropClick}>
-          <ModalApproveAction closeModal={closeModal} />
+          <ModalApproveAction closeModal={modalClose} />
         </div>
       )}
     </div>

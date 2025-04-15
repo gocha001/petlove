@@ -2,13 +2,24 @@ import { useState, useEffect } from "react";
 import css from "./NoticesItem.module.css";
 import ModalNotice from "../ModalNotice/ModalNotice.jsx";
 import ModalAttention from "../ModalAttention/ModalAttention.jsx";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectToken } from "../../redux/auth/authSelectors";
+import { selectFavoritesId } from "../../redux/notices/noticesSelectors.js";
+import {
+  fetchNoticesId,
+  favoritesAdd,
+  favoritesDelete,
+} from "../../redux/notices/noticesOperations.js";
+import useBodyScrollLock from "../../utils/useBodyScrollLock.js";
+import { currentUser } from "../../redux/auth/authOperations.js";
 
 const NoticesItem = ({ notice }) => {
   const token = useSelector(selectToken);
+  const favoritesId = useSelector(selectFavoritesId);
+  const dispatch = useDispatch();
 
   const [isOpenModal, setIsOpenModal] = useState(false);
+  useBodyScrollLock(isOpenModal);
   const openModal = () => setIsOpenModal(true);
   const closeModal = () => setIsOpenModal(false);
 
@@ -31,12 +42,35 @@ const NoticesItem = ({ notice }) => {
     };
   }, [closeModal]);
 
+  const handleMore = () => {
+    if (token) {
+      dispatch(fetchNoticesId(notice._id));
+    }
+    openModal();
+  };
+
   const [love, setLove] = useState(false);
-  const isLove = () => {
-    if (love === true) {
-      setLove(false);
+
+  useEffect(() => {
+    setLove(favoritesId.includes(notice._id));
+  }, [favoritesId]);
+
+  const isLove = async () => {
+    if (token) {
+      try {
+        if (love === true) {
+          await dispatch(favoritesDelete(notice._id)).unwrap();
+        } else {
+          await dispatch(favoritesAdd(notice._id)).unwrap();
+        }
+        setTimeout(() => {
+          dispatch(currentUser());
+        }, 300);
+      } catch (error) {
+        console.error(error);
+      }
     } else {
-      setLove(true);
+      openModal();
     }
   };
 
@@ -44,16 +78,6 @@ const NoticesItem = ({ notice }) => {
   if (love) {
     noticeLoveIcon = css.noticeLoveIconLove;
   }
-
-  useEffect(() => {
-    if (isOpenModal) {
-      document.body.style.overflow = "hidden";
-      document.body.style.paddingRight = "16px";
-    } else {
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "0";
-    }
-  }, [isOpenModal]);
 
   return (
     <div className={css.notice}>
@@ -101,12 +125,12 @@ const NoticesItem = ({ notice }) => {
           {notice.price ? (
             <p className={css.noticePrice}>${notice.price}</p>
           ) : (
-            <p className={css.noticePrice}>Price is negotiable</p>
+            <p className={css.noticePrice}>Price not specified</p>
           )}
           <div className={css.noticeBtns}>
             <button
               type="button"
-              onClick={openModal}
+              onClick={handleMore}
               className={css.noticeOpenModal}
             >
               Learn more

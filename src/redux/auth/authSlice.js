@@ -41,6 +41,8 @@ const authSlice = createSlice({
           email: null,
         };
         state.token = null;
+        console.log(state.user);
+        console.log(state.token);
       })
       .addMatcher(
         isAnyOf(registration.pending, login.pending, logout.pending),

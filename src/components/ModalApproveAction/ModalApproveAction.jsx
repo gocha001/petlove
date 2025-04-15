@@ -2,14 +2,22 @@ import css from "./ModalApproveAction.module.css";
 import cat1 from "../../assets/pets/cat-1.png";
 import cat2 from "../../assets/pets/cat-2.png";
 import { logout } from "../../redux/auth/authOperations.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { selectToken } from "../../redux/auth/authSelectors.js";
+import { useEffect } from "react";
 
 const ModalApproveAction = ({ closeModal }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const token = useSelector(selectToken);
 
   const onClick = () => {
     dispatch(logout());
+    navigate("/home");
+    closeModal();
   };
+
   return (
     <div className={css.modalApproveAction}>
       <button type="button" onClick={closeModal} className={css.closeBtn}>

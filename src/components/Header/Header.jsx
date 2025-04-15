@@ -9,6 +9,8 @@ import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import LogOutBtn from "../LogOutBtn/LogOutBtn.jsx";
+import useBodyScrollLock from "../../utils/useBodyScrollLock.js";
+import ModalApproveAction from "../ModalApproveAction/ModalApproveAction.jsx";
 
 const Header = () => {
   const token = useSelector(selectToken);
@@ -17,8 +19,20 @@ const Header = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  useBodyScrollLock(isOpenMenu);
+
   const openMenu = () => setIsOpenMenu(true);
   const closeMenu = () => setIsOpenMenu(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  useBodyScrollLock(isModalOpen);
+
+  const openModal = () => {
+    closeMenu();
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => setIsModalOpen(false);
 
   const location = useLocation();
 
@@ -37,6 +51,7 @@ const Header = () => {
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       closeMenu();
+      closeModal();
     }
   };
 
@@ -44,6 +59,7 @@ const Header = () => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         closeMenu();
+        closeModal();
       }
     };
     document.addEventListener("keydown", handleKeyDown);
@@ -51,19 +67,7 @@ const Header = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [closeMenu]);
-
-  useEffect(() => {
-    if (isOpenMenu) {
-      document.body.classList.add(`${css.noScroll}`);
-    } else {
-      document.body.classList.remove(`${css.noScroll}`);
-    }
-
-    return () => {
-      document.body.classList.remove(`${css.noScroll}`);
-    };
-  }, [isOpenMenu]);
+  }, [closeMenu, closeModal]);
 
   return (
     <div className={css.header}>
@@ -108,10 +112,15 @@ const Header = () => {
               <Nav closeMenu={closeMenu} />
               <div className={css.headerMenuLog}>
                 {!token && isMobile && <AuthNav closeMenu={closeMenu} />}
-                {token && isMobile && <LogOutBtn />}
+                {token && isMobile && <LogOutBtn openModal={openModal} />}
                 {!isMobile && <div></div>}
               </div>
             </div>
+          </div>
+        )}
+        {isModalOpen && (
+          <div className={css.logOutModal} onClick={handleBackdropClick}>
+            <ModalApproveAction closeModal={closeModal} />
           </div>
         )}
       </div>

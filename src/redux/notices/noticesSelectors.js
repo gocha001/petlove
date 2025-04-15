@@ -7,3 +7,5 @@ export const selectSpeciesList = (state) => state.notices.speciesList;
 export const selectSexList = (state) => state.notices.sexList;
 export const selectLocationList = (state) => state.notices.locationList;
 export const selectIsLoading = (state) => state.notices.isLoading;
+export const selectFavoritesId = (state) => state.notices.favoritesId;
+export const selectNoticeId = (state) => state.notices.noticeId;

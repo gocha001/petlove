@@ -64,7 +64,11 @@ const SearchField = ({ onSearch }) => {
               </svg>
             </button>
           )}
-          <button type="submit" className={css.searchSubmitBtn}>
+          <button
+            type="submit"
+            onClick={handleSubmit(onSubmit)}
+            className={css.searchSubmitBtn}
+          >
             <svg className={css.searchSubmitBtnIcon} fill="none" stroke="black">
               <use href="/icons/icons.svg#icon-search" />
             </svg>

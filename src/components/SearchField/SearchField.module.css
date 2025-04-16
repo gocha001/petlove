@@ -5,6 +5,7 @@
   align-items: center;
   width: 100%;
   overflow: hidden !important;
+  /* background-color: #fff; */
 }
 
 .searchForm {
@@ -21,6 +22,7 @@
   height: 42px;
   color: rgba(38, 38, 38, 0.5);
   overflow: hidden !important;
+  /* background-color: #fff; */
 }
 
 .searchFormNotice {
@@ -47,7 +49,7 @@
 .searchInput {
   outline: none;
   border: none;
-  background-color: transparent !important;
+  background-color: transparent;
   overflow: hidden !important;
   flex-shrink: 1;
   font-weight: 500;
@@ -72,6 +74,8 @@
 
 .searchBtns {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
   gap: 4px;
   padding-right: 12px;
@@ -83,6 +87,9 @@
   cursor: pointer;
   width: 18px;
   height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .searchSubmitBtnIcon,

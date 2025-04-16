@@ -33,6 +33,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 704px;
+    max-width: none;
     gap: 20px 22px;
   }
 }

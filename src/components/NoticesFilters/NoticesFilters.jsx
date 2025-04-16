@@ -272,21 +272,23 @@ const NoticesFilters = () => {
                 placeholder="Location"
               />
               <div className={css.noticeBtns}>
-                {location && (
-                  <button
-                    type="button"
-                    onClick={handleClear}
-                    className={css.noticeClearBtn}
-                  >
-                    <svg
-                      className={css.noticeClearBtnIcon}
-                      fill="none"
-                      stroke="black"
+                <div className={css.btnContainer}>
+                  {location && (
+                    <button
+                      type="button"
+                      onClick={handleClear}
+                      className={css.noticeClearBtn}
                     >
-                      <use href="/icons/icons.svg#icon-x" />
-                    </svg>
-                  </button>
-                )}
+                      <svg
+                        className={css.noticeClearBtnIcon}
+                        fill="none"
+                        stroke="black"
+                      >
+                        <use href="/icons/icons.svg#icon-x" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
                 <button type="submit" className={css.noticeSubmitBtn}>
                   <svg
                     className={css.noticeSubmitBtnIcon}

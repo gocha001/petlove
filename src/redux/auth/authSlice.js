@@ -6,8 +6,13 @@ const initialState = {
   user: {
     name: null,
     email: null,
+    avatar: null,
+    phone: null,
   },
   token: null,
+  noticesViewed: [],
+  noticesFavorites: [],
+  pets: [],
   isLoading: false,
   error: null,
 };

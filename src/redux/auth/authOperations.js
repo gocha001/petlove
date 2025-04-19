@@ -64,3 +64,74 @@ export const currentUser = createAsyncThunk(
     }
   }
 );
+
+export const fullUser = createAsyncThunk(
+  "auth/fullUser",
+  async (_, thunkAPI) => {
+    try {
+      const response = await Api.get(`users/current/full`);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response?.data);
+    }
+  }
+);
+
+export const editUser = createAsyncThunk(
+  "auth/editUser",
+  async (userData, thunkAPI) => {
+    try {
+      // for (let pair of formData.entries()) {
+      //   console.log(pair[0] + ", " + pair[1]);
+      // }
+
+      const { data } = await Api.patch(`users/current/edit`, userData);
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const uploadToCloudinary = async (file) => {
+  const data = new FormData();
+  data.append("file", file);
+  data.append("upload_preset", "avatar_unsigned");
+  data.append("cloud_name", "dpu4q2rgl"); // заміни!
+
+  const response = await fetch(
+    "https://api.cloudinary.com/v1_1/dpu4q2rgl/image/upload",
+    {
+      method: "POST",
+      body: data,
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Cloudinary upload failed");
+  }
+
+  const result = await response.json();
+  return result.secure_url;
+};
+
+export const uploadImageToCloudinary = async (file) => {
+  const cloudName = import.meta.env.VITE_CLOUDINARY_NAME;
+  const uploadPreset = import.meta.env.VITE_CLOUDINARY_PRESET;
+
+  if (!cloudName || !uploadPreset) {
+    throw new Error("Cloudinary config missing");
+  }
+
+  const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
+
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", uploadPreset);
+
+  const { data } = await axios.post(url, formData);
+  console.log(data.secure_url);
+  return data.secure_url;
+};

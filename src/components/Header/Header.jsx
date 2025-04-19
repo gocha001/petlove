@@ -112,7 +112,9 @@ const Header = () => {
               <Nav closeMenu={closeMenu} />
               <div className={css.headerMenuLog}>
                 {!token && isMobile && <AuthNav closeMenu={closeMenu} />}
-                {token && isMobile && <LogOutBtn openModal={openModal} />}
+                {token && isMobile && (
+                  <LogOutBtn openModal={openModal} common={true} />
+                )}
                 {!isMobile && <div></div>}
               </div>
             </div>

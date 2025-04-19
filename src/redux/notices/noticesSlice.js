@@ -9,6 +9,7 @@ import {
   favoritesAdd,
   favoritesDelete,
 } from "./noticesOperations";
+import { currentUser } from "../auth/authOperations";
 
 const initialState = {
   notices: [],
@@ -97,6 +98,13 @@ const noticesSlice = createSlice({
         state.favoritesId = action.payload;
         console.log(state.favoritesId);
       })
+      .addCase(currentUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.favoritesId = action.payload.noticesFavorites.map(
+          (item) => item._id
+        );
+        console.log(state.favoritesId);
+      })
       .addMatcher(
         isAnyOf(
           fetchNotices.pending,
@@ -106,7 +114,8 @@ const noticesSlice = createSlice({
           fetchCities.pending,
           fetchNoticesId.pending,
           favoritesAdd.pending,
-          favoritesDelete.pending
+          favoritesDelete.pending,
+          currentUser.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -122,7 +131,8 @@ const noticesSlice = createSlice({
           fetchCities.rejected,
           fetchNoticesId.rejected,
           favoritesAdd.rejected,
-          favoritesDelete.rejected
+          favoritesDelete.rejected,
+          currentUser.rejected
         ),
         (state, action) => {
           state.isLoading = false;

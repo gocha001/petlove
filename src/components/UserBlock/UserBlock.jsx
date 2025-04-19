@@ -1,5 +1,12 @@
+import EditUserBtn from "../EditUserBtn/EditUserBtn";
+import css from "./UserBlock.module.css";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/auth/authSelectors";
+
 const UserBlock = () => {
-  return <div>UserBlock</div>;
+  const user = useSelector(selectUser);
+
+  return <div>{!user.avatar && <EditUserBtn base={false} />}</div>;
 };
 
 export default UserBlock;

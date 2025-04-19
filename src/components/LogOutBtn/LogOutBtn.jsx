@@ -5,7 +5,7 @@ import ModalApproveAction from "../ModalApproveAction/ModalApproveAction.jsx";
 import useBodyScrollLock from "../../utils/useBodyScrollLock.js";
 import { useMediaQuery } from "react-responsive";
 
-const LogOutBtn = ({ openModal }) => {
+const LogOutBtn = ({ openModal, common }) => {
   const location = useLocation();
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -47,12 +47,12 @@ const LogOutBtn = ({ openModal }) => {
         className={`${css.logOutBtnGeneral} ${logOutBtn}`}
         type="button"
         onClick={() => {
-          `${isMobile ? openModal() : modalOpen()}`;
+          `${common && isMobile ? openModal() : modalOpen()}`;
         }}
       >
         Log out
       </button>
-      {isOpenModal && !isMobile && (
+      {isOpenModal && (!isMobile || !common) && (
         <div className={css.logOutModal} onClick={handleBackdropClick}>
           <ModalApproveAction closeModal={modalClose} />
         </div>

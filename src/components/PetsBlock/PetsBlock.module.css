@@ -1,0 +1,82 @@
+.petsBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 375px;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.petsBlockTitleCont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  /* gap: 131px; */
+  width: 295px;
+  height: 38px;
+}
+
+.petsBlockTitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #2b2b2a;
+  white-space: nowrap;
+}
+
+.petsBlockLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 4px;
+  border-radius: 30px;
+  padding: 10px 16px;
+  width: 103px;
+  height: 38px;
+  background: #f6b83d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.petsBlockLinkIcon {
+  width: 18px;
+  height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .petsBlock {
+    width: 624px;
+    max-width: none;
+  }
+  .petsBlockTitleCont {
+    width: 624px;
+    height: 40px;
+  }
+  .petsBlockTitle {
+    font-size: 18px;
+    line-height: 1.33333;
+  }
+  .petsBlockLink {
+    width: 118px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .petsBlock {
+    width: 440px;
+  }
+  .petsBlockTitleCont {
+    width: 440px;
+  }
+}

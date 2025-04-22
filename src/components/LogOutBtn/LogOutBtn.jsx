@@ -10,9 +10,15 @@ const LogOutBtn = ({ openModal, common }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   let logOutBtn = css.logOutBtn;
+  let logOutBtnGeneral = css.logOutBtnGeneral;
 
   if (location.pathname === "/home") {
     logOutBtn = css.logOutBtnHome;
+  }
+
+  if (location.pathname === "/profile" && !common) {
+    logOutBtnGeneral = css.logOutBtnGeneralProfile;
+    logOutBtn = css.logOutBtnProfile;
   }
 
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -44,7 +50,7 @@ const LogOutBtn = ({ openModal, common }) => {
   return (
     <div>
       <button
-        className={`${css.logOutBtnGeneral} ${logOutBtn}`}
+        className={`${logOutBtnGeneral} ${logOutBtn}`}
         type="button"
         onClick={() => {
           `${common && isMobile ? openModal() : modalOpen()}`;

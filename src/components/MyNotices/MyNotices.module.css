@@ -1,0 +1,130 @@
+.myNotices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 335px;
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  width: 295px;
+  height: 42px;
+  margin-bottom: 20px;
+}
+
+.activeTab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: row; */
+  /* gap: 8px; */
+  border-radius: 30px;
+  /* padding: 12px; */
+  width: 123px;
+  height: 42px;
+  background: #f6b83d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #fff;
+  white-space: nowrap;
+  border: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: row; */
+  /* gap: 10px; */
+  border-radius: 30px;
+  /* padding: 12px 39px; */
+  width: 123px;
+  height: 42px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+  white-space: nowrap;
+  border: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.empty {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #262626;
+  margin-top: 80px;
+  margin-bottom: 140px;
+}
+
+.emptySpan {
+  font-weight: 700;
+  color: #f6b83d;
+}
+
+@media screen and (min-width: 768px) {
+  .myNotices {
+    max-width: none;
+    width: 704px;
+  }
+  .tabs {
+    width: 704px;
+    height: 48px;
+    gap: 8px;
+  }
+  .activeTab {
+    width: 142px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .tab {
+    width: 142px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 704px;
+    max-width: none;
+    /* gap: 20px 22px; */
+  }
+  .empty {
+    font-size: 16px;
+    line-height: 1.25;
+    width: 458px;
+    height: 60px;
+    margin-top: 180px;
+    margin-bottom: 180px;
+    margin-left: 155px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .myNotices {
+    width: 684px;
+    margin-top: 40px;
+  }
+  .tabs {
+    width: 684px;
+  }
+}

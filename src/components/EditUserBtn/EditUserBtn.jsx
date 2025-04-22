@@ -62,7 +62,7 @@ const EditUserBtn = ({ base }) => {
         <div className={css.editUserURL}>
           <button type="button" onClick={openModal} className={css.editBtnUrl}>
             <svg className={css.editBtnUrlIcon}>
-              <use href="/public/icons/icons.svg#icon-icon" />
+              <use href="/icons/icons.svg#icon-icon" />
             </svg>
             <span className={css.editBtnUrlText}>Upload photo</span>
           </button>

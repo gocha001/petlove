@@ -1,0 +1,133 @@
+.userBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 295px;
+  gap: 30px;
+}
+
+.userAvatarWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 295px;
+}
+
+.userAvatar {
+  width: 94px;
+  height: 94px;
+  border-radius: 47px;
+  object-fit: cover;
+}
+
+.userInfo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 295px;
+  height: 186px;
+  /* margin-top: 30px; */
+}
+
+.userInfoTitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #2b2b2a;
+}
+
+.userInfoContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 295px;
+  height: 146px;
+}
+
+.userInfoItem {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: row;
+  /* gap: 10px; */
+  border: 1px solid #f6b83d;
+  border-radius: 30px;
+  /* padding: 12px 250px 12px 12px; */
+  width: 295px;
+  height: 42px;
+  padding-left: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+  /* text-align: start; */
+}
+
+@media screen and (min-width: 768px) {
+  .userBlock {
+    width: 624px;
+    margin-top: -38px;
+    gap: 20px;
+  }
+  .userAvatarWrap {
+    width: 624px;
+    margin-top: 0;
+    height: 110px;
+  }
+  .userAvatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50px;
+  }
+  .userInfo {
+    /* margin-top: 20px; */
+    width: 624px;
+    height: 162px;
+  }
+  .userInfoTitle {
+    font-size: 18px;
+    line-height: 1.33333;
+  }
+  .userInfoContent {
+    flex-direction: row;
+    width: 624px;
+    height: 118px;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .userInfoItem {
+    width: 305px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .userBlock {
+    width: 440px;
+    gap: 28px;
+  }
+  .userAvatarWrap {
+    width: 440px;
+  }
+  .userInfo {
+    width: 440px;
+    height: 228px;
+  }
+  .userInfoContent {
+    width: 440px;
+    height: 184px;
+    flex-direction: column;
+  }
+  .userInfoItem {
+    width: 440px;
+    height: 52px;
+    padding-left: 16px;
+  }
+}

@@ -82,10 +82,6 @@ export const editUser = createAsyncThunk(
   "auth/editUser",
   async (userData, thunkAPI) => {
     try {
-      // for (let pair of formData.entries()) {
-      //   console.log(pair[0] + ", " + pair[1]);
-      // }
-
       const { data } = await Api.patch(`users/current/edit`, userData);
       console.log(data);
       return data;
@@ -94,28 +90,6 @@ export const editUser = createAsyncThunk(
     }
   }
 );
-
-export const uploadToCloudinary = async (file) => {
-  const data = new FormData();
-  data.append("file", file);
-  data.append("upload_preset", "avatar_unsigned");
-  data.append("cloud_name", "dpu4q2rgl"); // заміни!
-
-  const response = await fetch(
-    "https://api.cloudinary.com/v1_1/dpu4q2rgl/image/upload",
-    {
-      method: "POST",
-      body: data,
-    }
-  );
-
-  if (!response.ok) {
-    throw new Error("Cloudinary upload failed");
-  }
-
-  const result = await response.json();
-  return result.secure_url;
-};
 
 export const uploadImageToCloudinary = async (file) => {
   const cloudName = import.meta.env.VITE_CLOUDINARY_NAME;

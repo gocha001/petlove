@@ -15,7 +15,7 @@ const ProfilePage = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={css.profilePage}>
       <UserCard />
       <MyNotices />
     </div>

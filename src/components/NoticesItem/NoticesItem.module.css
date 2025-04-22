@@ -6,9 +6,10 @@
   border-radius: 16px;
   width: 100%;
   max-width: 335px;
-  height: 454px;
+  /* height: 454px; */
   background: #fff;
   object-fit: cover;
+  padding-bottom: 24px;
 }
 
 .noticeImg {
@@ -26,7 +27,7 @@
   flex-direction: column;
   gap: 16px;
   width: 287px;
-  height: 204px;
+  /* height: 204px; */
 }
 
 .noticeContent {
@@ -123,6 +124,7 @@
   letter-spacing: -0.02em;
   color: #262626;
   text-align: left;
+  white-space: nowrap;
 }
 
 .noticeCommentCont {
@@ -162,7 +164,7 @@
 
 .noticeBtns {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   flex-direction: row;
   gap: 10px;
@@ -187,7 +189,28 @@
   border: none;
 }
 
+.noticeOpenModalViewed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 30px;
+  width: 287px;
+  height: 46px;
+  background: #f6b83d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #fff;
+  border: none;
+}
+
 .noticeOpenModal:hover {
+  background: #f9b020;
+}
+
+.noticeOpenModalViewed:hover {
   background: #f9b020;
 }
 
@@ -235,33 +258,89 @@
   overflow: hidden;
 }
 
+.deleteItemBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+}
+
+.deleteItemIcon {
+  width: 44px;
+  height: 44px;
+}
+
+.deleteItemIcon:hover .normal {
+  display: none;
+}
+
+.deleteItemIcon:hover .hover {
+  display: block;
+}
+
+.normal {
+  display: block;
+}
+
+.hover {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .notice {
     width: 342px;
     max-width: none;
-    height: 472px;
+    /* height: 472px; */
+  }
+  .noticeProfile {
+    /* height: 422px; */
+    gap: 14px;
   }
   .noticeImg {
     width: 294px;
     max-width: none;
   }
+  .noticeImgProfile {
+    width: 314px;
+    height: 162px;
+    margin-top: 14px;
+  }
   .noticeContainer {
     width: 294px;
-    height: 222px;
+    /* height: 222px; */
     gap: 24px;
+  }
+  .noticeContainerProfile {
+    width: 314px;
+    /* height: 208px; */
   }
   .noticeContent {
     width: 294px;
     height: 114px;
     gap: 8px;
   }
+  .noticeContentProfile {
+    width: 314px;
+    height: 112px;
+    gap: 14px;
+  }
   .noticeTitleData {
     width: 294px;
     height: 62px;
   }
+  .noticeTitleDataProfile {
+    width: 314px;
+  }
   .noticeTitleReview {
     width: 294px;
     height: 24px;
+  }
+  .noticeTitleReviewProfile {
+    width: 314px;
   }
   .noticeTitle {
     font-size: 18px;
@@ -275,14 +354,25 @@
   }
   .noticeData {
     width: 294px;
-    gap: 16px;
+    gap: 12px;
+  }
+  .noticeDataProfile {
+    width: 314px;
+    gap: 12px;
   }
   .noticeCommentCont {
     width: 294px;
   }
+  .noticeCommentContProfile {
+    width: 314px;
+  }
   .noticePriceBtns {
     width: 294px;
     height: 84px;
+  }
+  .noticePriceBtnsProfile {
+    width: 314px;
+    height: 80px;
   }
   .noticePrice {
     font-size: 18px;
@@ -292,15 +382,27 @@
     width: 294px;
     height: 48px;
   }
+  .noticeBtnsProfile {
+    width: 314px;
+    height: 44px;
+  }
   .noticeOpenModal {
     width: 236px;
     height: 48px;
     font-size: 16px;
     line-height: 1.25;
   }
+  .noticeOpenModalProfile {
+    width: 260px;
+    height: 44px;
+  }
   .noticeLove {
     width: 48px;
     height: 48px;
+  }
+  .noticeOpenModalViewed {
+    width: 314px;
+    height: 44px;
   }
 }
 
@@ -308,36 +410,75 @@
   .notice {
     width: 363px;
   }
+  .noticeProfile {
+    width: 320px;
+    gap: 24px;
+  }
   .noticeImg {
     width: 315px;
+  }
+  .noticeImgProfile {
+    width: 292px;
   }
   .noticeContainer {
     width: 315px;
   }
+  .noticeContainerProfile {
+    width: 292px;
+  }
   .noticeContent {
     width: 315px;
+  }
+  .noticeContentProfile {
+    width: 292px;
   }
   .noticeTitleData {
     width: 315px;
     height: 62px;
   }
+  .noticeTitleDataProfile {
+    width: 292px;
+    height: 62px;
+  }
   .noticeTitleReview {
     width: 315px;
   }
+  .noticeTitleReviewProfile {
+    width: 292px;
+    height: 24px;
+  }
   .noticeData {
     width: 315px;
-    gap: 20px;
+    gap: 12px;
+  }
+  .noticeDataProfile {
+    width: 292px;
   }
   .noticeCommentCont {
     width: 315px;
   }
+  .noticeCommentContProfile {
+    width: 292px;
+  }
   .noticePriceBtns {
     width: 315px;
+  }
+  .noticePriceBtnsProfile {
+    width: 292px;
   }
   .noticeBtns {
     width: 315px;
   }
+  .noticeBtnsProfile {
+    width: 292px;
+  }
   .noticeOpenModal {
     width: 257px;
+  }
+  .noticeOpenModalProfile {
+    width: 238px;
+  }
+  .noticeOpenModalViewed {
+    width: 292px;
   }
 }

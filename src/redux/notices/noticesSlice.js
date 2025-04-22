@@ -29,7 +29,6 @@ const initialState = {
   page: 1,
   totalPages: 1,
   limit: 6,
-  noticeId: {},
   isLoading: false,
   error: null,
 };

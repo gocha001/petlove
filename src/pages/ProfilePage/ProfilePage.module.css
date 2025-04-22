@@ -1,0 +1,26 @@
+.profilePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 335px;
+  width: 100%;
+  margin-top: 22px;
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .profilePage {
+    max-width: none;
+    width: 768px;
+    margin-top: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .profilePage {
+    flex-direction: row;
+    width: 1280px;
+    gap: 32px;
+    align-items: flex-start;
+  }
+}

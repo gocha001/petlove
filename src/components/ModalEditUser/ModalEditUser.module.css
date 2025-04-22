@@ -6,7 +6,7 @@
   background: #fff;
   position: relative;
   width: 335px;
-  height: 473px;
+  /* height: 473px; */
   padding-left: 20px;
 }
 
@@ -100,7 +100,6 @@
   flex-direction: row;
   gap: 8px;
   background: #fff4df;
-  /* border: 1px solid orange; */
   padding: 12px;
   border-radius: 30px;
   cursor: pointer;
@@ -116,4 +115,60 @@
 .uploadIcon {
   width: 18px;
   height: 18px;
+}
+
+.inputs {
+  display: flex;
+  /* align-items: flex-start; */
+  /* justify-content: flex-start; */
+  flex-direction: column;
+  gap: 10px;
+  width: 295px;
+  /* height: 146px; */
+  margin-top: 10px;
+}
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.input {
+  display: flex;
+  border: 1px solid #f6b83d;
+  border-radius: 30px;
+  padding: 0;
+  width: 295px;
+  height: 42px !important;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+  padding-left: 12px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.editBtn {
+  margin-top: 21px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 30px;
+  padding: 12px 108px;
+  width: 295px;
+  height: 42px;
+  background: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #fff;
+  white-space: nowrap;
 }

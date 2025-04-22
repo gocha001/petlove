@@ -9,6 +9,7 @@ import {
   favoritesDelete,
 } from "../../redux/notices/noticesOperations";
 import { currentUser } from "../../redux/auth/authOperations";
+import { addNotice, deleteNotice } from "../../redux/auth/authSlice";
 
 const ModalNotice = ({ closeModal }) => {
   const notice = useSelector(selectNoticeId);
@@ -46,8 +47,10 @@ const ModalNotice = ({ closeModal }) => {
   const isLove = async () => {
     if (love === true) {
       await dispatch(favoritesDelete(notice._id)).unwrap();
+      dispatch(deleteNotice(notice._id));
     } else {
       await dispatch(favoritesAdd(notice._id)).unwrap();
+      dispatch(addNotice(notice));
     }
     setTimeout(() => {
       dispatch(currentUser());

@@ -15,11 +15,20 @@ const editUserSchema = yup.object().shape({
     .required("Email is required")
     .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, "Invalid email"),
   phone: yup.string().matches(/^\+38\d{10}$/, "Invalid phone"),
-  avatar: yup
-    .string()
-    // .matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, "Invalid URL")
-    .nullable(),
+  avatar: yup.string().nullable(),
+  // .matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, "Invalid URL")
+  // .test("is-url-if-present", "Invalid URL", (value) => {
+  //   if (!value) return true;
+  //   return /^https?:\/\/.*\.(png|jpg|jpeg|gif|bmp|webp)$/.test(value);
+  // }),
 });
+// if (
+//   avatarUrl &&
+//   !/^https?:\/\/.*\.(png|jpg|jpeg|gif|bmp|webp)$/.test(avatarUrl)
+// ) {
+//   console.error("Invalid avatar URL");
+//   return;
+// }
 
 const ModalEditUser = ({ closeModal }) => {
   const dispatch = useDispatch();
@@ -27,7 +36,7 @@ const ModalEditUser = ({ closeModal }) => {
   const [preview, setPreview] = useState(defaultValues?.avatar || null);
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  console.log(defaultValues);
   // const [avatar, setAvatar] = useState(null);
 
   const {
@@ -46,16 +55,6 @@ const ModalEditUser = ({ closeModal }) => {
     setPreview(defaultValues?.avatar || null);
   }, [defaultValues, reset]);
 
-  // const onFileChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     setFile(file);
-  //     const previewUrl = URL.createObjectURL(file);
-  //     setPreview(previewUrl);
-  //     setValue("avatar", previewUrl);
-  //   }
-  // };
-
   const handleFileChange = (e) => {
     const newFile = e.target.files[0];
     if (newFile) {
@@ -66,13 +65,15 @@ const ModalEditUser = ({ closeModal }) => {
 
   const onSubmit = async (data) => {
     setLoading(true);
+    console.log(loading);
     try {
+      console.log(defaultValues.avatar);
       let avatarUrl = defaultValues.avatar;
-
+      console.log(avatarUrl);
       if (file) {
         avatarUrl = await uploadImageToCloudinary(file);
       }
-      console.log(avatarUrl);
+
       const updatedUser = {
         name: data.name,
         email: data.email,
@@ -81,6 +82,7 @@ const ModalEditUser = ({ closeModal }) => {
       };
 
       dispatch(editUser(updatedUser));
+      closeModal();
     } catch (err) {
       console.error("Failed to submit:", err.message);
     } finally {
@@ -102,7 +104,7 @@ const ModalEditUser = ({ closeModal }) => {
             <img src={preview} alt="Avatar preview" className={css.avatar} />
           ) : (
             <svg className={css.defaultIcon}>
-              <use href="/public/icons/icons.svg#icon-icon" />
+              <use href="/icons/icons.svg#icon-icon" />
             </svg>
           )}
           <input
@@ -123,16 +125,35 @@ const ModalEditUser = ({ closeModal }) => {
           </div>
         </div>
 
-        <input {...register("name")} placeholder="Name" />
-        <p className={css.error}>{errors.name?.message}</p>
-
-        <input {...register("email")} placeholder="Email" />
-        <p className={css.error}>{errors.email?.message}</p>
-
-        <input {...register("phone")} placeholder="Phone" />
-        <p className={css.error}>{errors.phone?.message}</p>
-
-        <button type="submit">Go to profile</button>
+        <div className={css.inputs}>
+          <div className={css.inputGroup}>
+            <input
+              {...register("name")}
+              placeholder="Name"
+              className={css.input}
+            />
+            <p className={css.error}>{errors.name?.message}</p>
+          </div>
+          <div className={css.inputGroup}>
+            <input
+              {...register("email")}
+              placeholder="Email"
+              className={css.input}
+            />
+            <p className={css.error}>{errors.email?.message}</p>
+          </div>
+          <div className={css.inputGroup}>
+            <input
+              {...register("phone")}
+              placeholder="Phone"
+              className={css.input}
+            />
+            <p className={css.error}>{errors.phone?.message}</p>
+          </div>
+        </div>
+        <button type="submit" className={css.editBtn}>
+          Go to profile
+        </button>
       </form>
     </div>
   );

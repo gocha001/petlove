@@ -10,7 +10,9 @@ const UserCard = () => {
       <EditUserBtn base={true} />
       <UserBlock />
       <PetsBlock />
-      <LogOutBtn common={false} />
+      <div className={css.userCardLogOut}>
+        <LogOutBtn common={false} />
+      </div>
     </div>
   );
 };

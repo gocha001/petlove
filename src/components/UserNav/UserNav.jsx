@@ -8,7 +8,7 @@ const UserNav = () => {
 
   return (
     <div className={css.userNav}>
-      {!isMobile && <LogOutBtn />}
+      {!isMobile && <LogOutBtn common={true} />}
       <UserBar />
     </div>
   );

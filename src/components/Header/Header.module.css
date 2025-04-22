@@ -108,7 +108,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .headerWrapper {
@@ -173,6 +173,9 @@
   .headerCloseBtnIcon {
     width: 36px;
     height: 36px;
+  }
+  .headerCont {
+    gap: 16px;
   }
 }
 

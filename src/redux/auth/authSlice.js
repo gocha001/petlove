@@ -5,6 +5,8 @@ import {
   logout,
   fullUser,
   editUser,
+  addPets,
+  deletePets,
 } from "./authOperations";
 import { toast } from "react-toastify";
 
@@ -92,13 +94,25 @@ const authSlice = createSlice({
         state.noticesFavorites = action.payload.noticesFavorites;
         state.noticesViewed = action.payload.noticesViewed;
       })
+      .addCase(addPets.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.pets = action.payload.pets;
+        console.log(state.pets);
+      })
+      .addCase(deletePets.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.pets = action.payload.pets;
+        console.log(state.pets);
+      })
       .addMatcher(
         isAnyOf(
           registration.pending,
           login.pending,
           logout.pending,
           fullUser.pending,
-          editUser.pending
+          editUser.pending,
+          addPets.pending,
+          deletePets.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -111,7 +125,9 @@ const authSlice = createSlice({
           login.rejected,
           logout.rejected,
           fullUser.rejected,
-          editUser.rejected
+          editUser.rejected,
+          addPets.rejected,
+          deletePets.rejected
         ),
         (state, action) => {
           state.isLoading = false;

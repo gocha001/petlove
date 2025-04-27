@@ -1,0 +1,14 @@
+.petsList {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  width: 295px;
+}
+
+.petsListContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 295px;
+  gap: 14px;
+}

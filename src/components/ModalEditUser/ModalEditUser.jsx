@@ -4,9 +4,11 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { editUser } from "../../redux/auth/authOperations";
+import {
+  editUser,
+  uploadImageToCloudinary,
+} from "../../redux/auth/authOperations";
 import { selectUser } from "../../redux/auth/authSelectors";
-import { uploadImageToCloudinary } from "../../redux/auth/authOperations";
 
 const editUserSchema = yup.object().shape({
   name: yup.string().required("Name is required"),

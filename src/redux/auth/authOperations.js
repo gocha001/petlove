@@ -73,7 +73,9 @@ export const fullUser = createAsyncThunk(
       console.log(response.data);
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response?.data);
+      const message =
+        error.response?.data?.message || error.message || "Unknown error";
+      return thunkAPI.rejectWithValue(message);
     }
   }
 );
@@ -86,7 +88,8 @@ export const editUser = createAsyncThunk(
       console.log(data);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      const message = error.data?.message || error.message || "Unknown error";
+      return thunkAPI.rejectWithValue(message);
     }
   }
 );
@@ -109,3 +112,34 @@ export const uploadImageToCloudinary = async (file) => {
   console.log(data.secure_url);
   return data.secure_url;
 };
+
+export const addPets = createAsyncThunk(
+  "auth/addPets",
+  async (data, thunkAPI) => {
+    try {
+      const response = await Api.post(`users/current/pets/add`, data);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      const message =
+        error.response?.data?.message || error.message || "Unknown error";
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+export const deletePets = createAsyncThunk(
+  "auth/deletePets",
+  async (id, thunkAPI) => {
+    try {
+      console.log(id);
+      const response = await Api.delete(`users/current/pets/remove/${id}`);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      const message =
+        error.response?.data?.message || error.message || "Unknown error";
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);

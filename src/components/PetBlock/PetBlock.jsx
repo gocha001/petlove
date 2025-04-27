@@ -17,6 +17,12 @@ import dog1 from "../../assets/pets/dog-1.png";
 import dog2 from "../../assets/pets/dog-2.png";
 import { useMediaQuery } from "react-responsive";
 import { useLocation } from "react-router-dom";
+import addM1 from "../../assets/add/add-m-1.png";
+import addM2 from "../../assets/add/add-m-2.png";
+import addT1 from "../../assets/add/add-t-1.png";
+import addT2 from "../../assets/add/add-t-2.png";
+import addD1 from "../../assets/add/add-d-1.png";
+import addD2 from "../../assets/add/add-d-2.png";
 
 const PetBlock = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -55,9 +61,25 @@ const PetBlock = () => {
       "Rich would be the perfect addition to an active family that loves to play and go on walks. I bet he would love having a doggy playmate too!";
   }
 
+  let isAddPet = false;
+
+  if (location.pathname === "/add-pet") {
+    imgM1 = addM1;
+    imgM2 = addM2;
+    imgT1 = addT1;
+    imgT2 = addT2;
+    imgD1 = addD1;
+    imgD2 = addD2;
+    isAddPet = true;
+  }
+
   return (
-    <div className={css.petBlock}>
-      <picture className={css.petBlockPicture}>
+    <div className={`${css.petBlock} ${isAddPet && css.petBlockAddPet}`}>
+      <picture
+        className={`${css.petBlockPicture} ${
+          isAddPet && css.petBlockPictureAddPet
+        }`}
+      >
         <source
           srcSet={`${imgM1} 1x, ${imgM2} 2x`}
           media="(max-width: 767px)"
@@ -70,9 +92,13 @@ const PetBlock = () => {
           srcSet={`${imgD1} 1x, ${imgD2} 2x`}
           media="(min-width: 1280px)"
         />
-        <img src={`${imgM1}`} alt={alt} className={petBlockImg} />
+        <img
+          src={`${imgM1}`}
+          alt={alt}
+          className={`${petBlockImg} ${isAddPet && css.petBlockImgAddPet}`}
+        />
       </picture>
-      {!isMobile && (
+      {!isMobile && location.pathname !== "/add-pet" && (
         <div
           className={`${css.petBlockContainer} ${css.petBlockContainerPosition}`}
         >

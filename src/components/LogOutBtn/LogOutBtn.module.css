@@ -59,7 +59,8 @@
 
 .logOutBtnHome {
   background: #f6b83d;
-  color: #262626;
+  color: #fff;
+  border: 1px solid #fff;
 }
 
 .logOutBtnHome:hover {

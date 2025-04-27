@@ -1,0 +1,114 @@
+.petItem {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(38, 38, 38, 0.1);
+  border-radius: 20px;
+  width: 295px;
+  height: 132px;
+}
+
+.petImg {
+  width: 66px;
+  height: 66px;
+  border-radius: 33px;
+  margin-left: 16px;
+  margin-top: 16px;
+}
+
+.petItemContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  width: 153px;
+  height: 100px;
+  margin-left: 14px;
+  margin-top: 16px;
+}
+
+.petItemTitle {
+  width: 153px;
+  height: 18px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: #2b2b2a;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.petItemInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  width: 153px;
+  height: 74px;
+}
+
+.petItemBlock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  height: 32px;
+}
+
+.petItemKey {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.petItemValue {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.petItemBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: row; */
+  /* gap: 10px; */
+  border-radius: 30px;
+  /* padding: 7px; */
+  width: 30px;
+  height: 30px;
+  background: #fff4df;
+  padding: 0;
+  margin-left: 4px;
+  margin-top: 12px;
+}
+
+.petItemIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.petItemIcon:hover .normal {
+  display: none;
+}
+
+.petItemIcon:hover .hover {
+  display: block;
+}
+
+.normal {
+  display: block;
+}
+
+.hover {
+  display: none;
+}

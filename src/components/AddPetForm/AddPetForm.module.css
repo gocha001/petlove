@@ -1,0 +1,534 @@
+.addPet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 335px;
+  height: 489px;
+  background: #fff;
+  gap: 24px;
+}
+
+.addPetFormTitleContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  width: 295px;
+  height: 28px;
+  margin-top: 28px;
+}
+
+.addPetFormTitle {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.addPetFormSpan {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: rgba(43, 43, 42, 0.4);
+}
+
+.addPetForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.addPetRadioBlock {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.radioInputs {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 295px;
+  height: 32px;
+  gap: 8px;
+}
+
+.radioLabel {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.petUrlWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.pet {
+  width: 68px;
+  height: 68px;
+  border-radius: 34px;
+}
+
+.defaultPet {
+  width: 68px;
+  height: 68px;
+}
+
+.urlInputHidden {
+  display: none;
+}
+
+.petUrlBtn {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.urlLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px;
+  background: #fff4df;
+  padding: 12px;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 117px;
+  height: 36px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.uploadIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.urlInputChange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding-left: 10px;
+  width: 170px;
+  height: 36px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.addPetInfoCont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding-left: 12px;
+  width: 295px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.addPetInfo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  height: 42px;
+}
+
+.addPetBirthdayCont {
+  display: flex;
+  flex-direction: column;
+}
+
+.addPetBirthday {
+  position: relative;
+  display: inline-block;
+  width: 144px;
+}
+
+.inputDate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding-left: 12px;
+  width: 144px;
+  height: 42px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+  width: 100%;
+  padding-right: 36px;
+}
+
+.iconCalendar {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  fill: none;
+  stroke: #262626;
+}
+
+.errorUrl {
+  color: red;
+  width: 295px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+}
+
+.errorBirthday {
+  width: 144px;
+  color: red;
+  font-size: 12px;
+  text-align: left;
+}
+
+.typeContainer {
+  width: 143px;
+  height: 42px;
+  position: relative;
+}
+
+.species {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding-left: 12px;
+  width: 143px;
+  height: 42px;
+  cursor: pointer;
+  position: relative;
+  text-overflow: ellipsis;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="%23121417"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.species:focus {
+  outline: none;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="%23121417"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E');
+}
+
+.typeOptionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 46px;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 15px;
+  width: 143px;
+  height: 78px;
+  background: #fff;
+}
+
+.options {
+  position: absolute;
+  width: 133px;
+  height: 78px;
+  overflow-y: scroll;
+  z-index: 100;
+  padding-left: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.6);
+  text-align: left;
+}
+
+.addPetBtns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 8px;
+  width: 295px;
+  margin-top: 31px;
+}
+
+.addPetBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  width: 100px;
+  height: 42px;
+  background: rgba(38, 38, 38, 0.05);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.addPetBack:hover {
+  background: rgba(38, 38, 38, 0.09);
+}
+
+.addPetBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  width: 100px;
+  height: 42px;
+  background: #f6b83d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.addPetBtn:hover {
+  background: #f9b020;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: #000;
+}
+
+input {
+  transition: border 0.3s;
+}
+
+input:focus,
+input.filled {
+  border: 1px solid #f6b83d;
+}
+
+input {
+  outline: none;
+  border: 1px solid rgba(38, 38, 38, 0.15); /* або свій дефолтний колір */
+  transition: border-color 0.2s;
+}
+
+input:hover {
+  border-color: #f6b83d; /* колір при ховері */
+}
+
+input:focus {
+  border-color: #f6b83d; /* колір при фокусі */
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .addPet {
+    border-radius: 60px;
+    width: 704px;
+    max-width: none;
+    height: 614px;
+    gap: 40px;
+  }
+  .addPetFormTitleContainer {
+    width: 432px;
+    height: 32px;
+    margin-top: 40px;
+  }
+  .addPetFormTitle {
+    font-size: 32px;
+  }
+  .addPetFormSpan {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .radioInputs {
+    width: 432px;
+    height: 40px;
+  }
+  .radioLabel {
+    width: 40px;
+    height: 40px;
+  }
+  .radioIcon {
+    width: 40px;
+    height: 40px;
+  }
+  .petUrlWrap {
+    margin-top: -22px;
+  }
+  .pet {
+    width: 86px;
+    height: 86px;
+    border-radius: 43px;
+  }
+  .defaultPet {
+    width: 86px;
+    height: 86px;
+  }
+  .petUrlBtn {
+    margin-top: 12px;
+  }
+  .urlLabel {
+    width: 146px;
+    height: 42px;
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+  .uploadIcon {
+    width: 18px;
+    height: 18px;
+  }
+  .urlInputChange {
+    width: 278px;
+    height: 42px;
+  }
+  .addPetInfoCont {
+    gap: 18px;
+    margin-top: 18px;
+  }
+  .input {
+    width: 432px;
+    height: 52px;
+    padding-left: 16px;
+    font-size: 16px;
+  }
+  .addPetInfo {
+    height: 52px;
+    gap: 12px;
+  }
+  .addPetBirthday {
+    width: 210px;
+  }
+  .inputDate {
+    width: 210px;
+    height: 52px;
+    padding-left: 16px;
+    padding-right: 40px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .iconCalendar {
+    width: 20px;
+    height: 20px;
+    right: 16px;
+  }
+  .errorUrl {
+    width: 432px;
+  }
+  .errorBirthday {
+    width: 210px;
+  }
+  .typeContainer {
+    width: 210px;
+    height: 52px;
+  }
+  .species {
+    padding-left: 16px;
+    width: 210px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .typeOptionContainer {
+    top: 56px;
+    width: 210px;
+    height: 142px;
+  }
+  .options {
+    width: 200px;
+    height: 142px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .addPetBtns {
+    width: 432px;
+    margin-top: 40px;
+  }
+  .addPetBack {
+    width: 170px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .addPetBtn {
+    width: 170px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .addPet {
+    width: 592px !important;
+    height: 654px;
+    margin-top: 32px;
+  }
+  .addPetFormTitleContainer {
+    margin-top: 60px;
+  }
+  .petUrlWrap {
+    margin-top: -16px;
+  }
+  .typeOptionContainer {
+    height: 126px;
+  }
+  .options {
+    height: 126px;
+  }
+}

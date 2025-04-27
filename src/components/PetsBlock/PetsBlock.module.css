@@ -27,30 +27,6 @@
   white-space: nowrap;
 }
 
-.petsBlockLink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 4px;
-  border-radius: 30px;
-  padding: 10px 16px;
-  width: 103px;
-  height: 38px;
-  background: #f6b83d;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.28571;
-  letter-spacing: -0.03em;
-  color: #fff;
-  white-space: nowrap;
-}
-
-.petsBlockLinkIcon {
-  width: 18px;
-  height: 18px;
-}
-
 @media screen and (min-width: 768px) {
   .petsBlock {
     width: 624px;

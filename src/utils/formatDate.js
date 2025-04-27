@@ -10,7 +10,7 @@ export const formatDate = (isoString) => {
 
   let result = `${day}/${month}/${year}`;
 
-  if (location.pathname === "/notices") {
+  if (location.pathname === "/notices" || location.pathname === "/profile") {
     result = `${day}.${month}.${year}`;
   }
 

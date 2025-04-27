@@ -14,6 +14,7 @@ import useBodyScrollLock from "../../utils/useBodyScrollLock.js";
 import { currentUser } from "../../redux/auth/authOperations.js";
 import { useLocation } from "react-router-dom";
 import { deleteNotice } from "../../redux/auth/authSlice.js";
+import { formatDate } from "../../utils/formatDate.js";
 
 const NoticesItem = ({ notice, isFavorite, isProfile }) => {
   const token = useSelector(selectToken);
@@ -145,7 +146,7 @@ const NoticesItem = ({ notice, isFavorite, isProfile }) => {
               </div>
               <div className={css.noticeParam}>
                 <p className={css.noticeKey}>Birthday</p>
-                <p className={css.noticeValue}>{notice.birthday}</p>
+                <p className={css.noticeValue}>{formatDate(notice.birthday)}</p>
               </div>
               <div className={css.noticeParam}>
                 <p className={css.noticeKey}>Sex</p>

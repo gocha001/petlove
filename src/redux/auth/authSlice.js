@@ -33,11 +33,9 @@ const authSlice = createSlice({
       state.noticesFavorites = state.noticesFavorites.filter(
         (item) => item._id != action.payload
       );
-      console.log(state.noticesFavorites);
     },
     addNotice: (state, action) => {
       state.noticesFavorites.push(action.payload);
-      console.log(state.noticesFavorites);
     },
   },
   extraReducers: (builder) => {
@@ -65,8 +63,6 @@ const authSlice = createSlice({
           email: null,
         };
         state.token = null;
-        console.log(state.user);
-        console.log(state.token);
       })
       .addCase(fullUser.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -97,12 +93,10 @@ const authSlice = createSlice({
       .addCase(addPets.fulfilled, (state, action) => {
         state.isLoading = false;
         state.pets = action.payload.pets;
-        console.log(state.pets);
       })
       .addCase(deletePets.fulfilled, (state, action) => {
         state.isLoading = false;
         state.pets = action.payload.pets;
-        console.log(state.pets);
       })
       .addMatcher(
         isAnyOf(

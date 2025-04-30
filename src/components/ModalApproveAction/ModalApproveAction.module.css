@@ -5,7 +5,7 @@
   border-radius: 30px;
   width: 335px;
   height: 270px;
-  background: #fff;
+  background: var(--color-white);
   position: relative;
 }
 
@@ -46,7 +46,7 @@
   font-size: 20px;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .modalApproveActionBtns {
@@ -69,16 +69,16 @@
   border: none;
   width: 137px;
   height: 42px;
-  background: #f6b83d;
+  background: var(--color-yellow);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .logoutBtn:hover {
-  background: #f9b020;
+  background: var(--color-dark-yellow);
 }
 
 .cancelBtn {
@@ -90,16 +90,16 @@
   border: none;
   width: 134px;
   height: 42px;
-  background: rgba(38, 38, 38, 0.05);
+  background: var(--color-dark-gray3);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .cancelBtn:hover {
-  background: #fbe7c1;
+  background: var(--color-dark-beige);
 }
 
 @media screen and (min-width: 768px) {

@@ -3,10 +3,9 @@
   flex-direction: column;
   align-items: flex-start;
   border-radius: 30px;
-  background: #fff;
+  background: var(--color-white);
   position: relative;
   width: 335px;
-  /* height: 473px; */
   padding-left: 20px;
 }
 
@@ -33,7 +32,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 1;
-  color: #2b2b2a;
+  color: var(--color-black3);
   margin-top: 40px;
 }
 
@@ -78,7 +77,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  border: 1px solid #f6b83d;
   border-radius: 30px;
   width: 161px;
   height: 42px;
@@ -86,11 +84,7 @@
   font-size: 12px;
   line-height: 42px;
   letter-spacing: -0.02em;
-  color: #262626;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-all;
+  color: var(--color-black);
 }
 
 .uploadBtn {
@@ -99,7 +93,7 @@
   justify-content: center;
   flex-direction: row;
   gap: 8px;
-  background: #fff4df;
+  background: var(--color-beige);
   padding: 12px;
   border-radius: 30px;
   cursor: pointer;
@@ -109,7 +103,11 @@
   font-size: 12px;
   line-height: 1.33333;
   letter-spacing: -0.02em;
-  color: #262626;
+  color: var(--color-black);
+}
+
+.uploadBtn:hover {
+  background: var(--color-dark-beige);
 }
 
 .uploadIcon {
@@ -119,22 +117,20 @@
 
 .inputs {
   display: flex;
-  /* align-items: flex-start; */
-  /* justify-content: flex-start; */
   flex-direction: column;
   gap: 10px;
   width: 295px;
-  /* height: 146px; */
   margin-top: 10px;
 }
+
 .inputGroup {
   display: flex;
   flex-direction: column;
   text-align: start;
 }
+
 .input {
   display: flex;
-  border: 1px solid #f6b83d;
   border-radius: 30px;
   padding: 0;
   width: 295px;
@@ -143,13 +139,14 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
   padding-left: 12px;
 }
 
 .error {
-  color: red;
+  color: var(--color-red);
   font-size: 14px;
+  margin-bottom: -14px;
 }
 
 .editBtn {
@@ -159,16 +156,107 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  gap: 10px;
   border-radius: 30px;
-  padding: 12px 108px;
   width: 295px;
   height: 42px;
-  background: #f6b83d;
+  background: var(--color-yellow);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--color-white);
   white-space: nowrap;
+}
+
+.editBtn:hover {
+  background: var(--color-dark-yellow);
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: #000;
+}
+
+input {
+  transition: border 0.3s;
+}
+
+input:focus,
+input.filled {
+  border: 1px solid var(--color-yellow);
+}
+
+input {
+  outline: none;
+  border: 1px solid var(--color-dark-gray);
+  transition: border-color 0.2s;
+}
+
+input:hover {
+  border-color: var(--color-yellow);
+}
+
+input:focus {
+  border-color: var(--color-yellow);
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .modalEditUser {
+    width: 480px;
+    padding-left: 50px;
+  }
+  .editTitle {
+    font-size: 18px;
+    line-height: 1.33333;
+    margin-top: 50px;
+  }
+  .avatarWrap {
+    width: 380px;
+    gap: 20px;
+  }
+  .avatar {
+    width: 86px;
+    height: 86px;
+    border-radius: 43px;
+  }
+  .defaultIcon {
+    width: 86px;
+    height: 86px;
+    border-radius: 43px;
+  }
+  .btnBlock {
+    width: 380px;
+  }
+  .url {
+    width: 226px;
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+  .uploadBtn {
+    width: 146px;
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+  .inputs {
+    width: 380px;
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .input {
+    width: 380px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+    padding-left: 16px;
+  }
+  .editBtn {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 380px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 }

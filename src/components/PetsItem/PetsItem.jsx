@@ -37,13 +37,10 @@ const PetsItem = ({ pet }) => {
       <button type="button" onClick={onClick} className={css.petItemBtn}>
         <svg className={css.petItemIcon}>
           <use
-            href="/public/icons/btns.svg#icon-deleteNormal"
+            href="/icons/btns.svg#icon-deleteNormal"
             className={css.normal}
           />
-          <use
-            href="/public/icons/btns.svg#icon-deleteHover"
-            className={css.hover}
-          />
+          <use href="/icons/btns.svg#icon-deleteHover" className={css.hover} />
         </svg>
       </button>
     </div>

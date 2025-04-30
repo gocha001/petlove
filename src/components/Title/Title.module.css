@@ -20,7 +20,7 @@
   font-size: 28px;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
   white-space: nowrap;
 }
 

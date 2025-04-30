@@ -1,23 +1,13 @@
 import css from "./MyNotices.module.css";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectFavorites, selectViewed } from "../../redux/auth/authSelectors";
-import { favoritesDelete } from "../../redux/notices/noticesOperations";
 import NoticesItem from "../NoticesItem/NoticesItem";
 
 const MyNotices = () => {
-  const dispatch = useDispatch();
   const [activeTab, setActiveTab] = useState("favorites");
   const favorites = useSelector(selectFavorites);
   const viewed = useSelector(selectViewed);
-
-  const handleDeleteFavorite = async (id) => {
-    try {
-      await dispatch(favoritesDelete(id)).unwrap();
-    } catch (error) {
-      console.error("Delete failed:", error);
-    }
-  };
 
   const currentList = activeTab === "favorites" ? favorites : viewed;
 

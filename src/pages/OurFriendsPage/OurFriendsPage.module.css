@@ -10,7 +10,7 @@
 }
 
 .error {
-  color: red;
+  color: var(--color-red);
 }
 
 @media screen and (min-width: 768px) {

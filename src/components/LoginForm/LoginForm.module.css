@@ -26,7 +26,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: 1px solid var(--color-dark-gray);
   border-radius: 30px;
   width: 295px;
   height: 42px;
@@ -35,7 +35,7 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: rgba(38, 38, 38, 0.5);
+  color: var(--color-dark-gray2);
   padding-right: 32px;
 }
 
@@ -49,20 +49,21 @@
   padding: 12px 99px;
   width: 295px;
   height: 42px;
-  background: #f6b83d;
+  background: var(--color-yellow);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 12px;
 }
 
 .error {
-  color: red;
+  color: var(--color-red);
   font-size: 12px;
-  margin-bottom: -10px;
+  margin-bottom: -14px;
+  text-align: left;
 }
 
 .password {
@@ -75,14 +76,12 @@
   top: 50%;
   right: 12px;
   transform: translateY(-50%);
-  /* padding-right: 24px; */
   padding: 0;
 }
 
 .passwordIcon {
   width: 18px;
   height: 18px;
-  /* display: block; */
 }
 
 input:-webkit-autofill {
@@ -93,7 +92,7 @@ input:-webkit-autofill {
 
 input:focus {
   outline: none;
-  border: 1px solid #f6b83d;
+  border: 1px solid var(--color-yellow);
 }
 
 @media screen and (min-width: 760px) {

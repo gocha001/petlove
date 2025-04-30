@@ -55,12 +55,12 @@
   border-radius: 30px;
   width: 88px;
   height: 32px;
-  background: #fff4df;
+  background: var(--color-beige);
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33333;
   letter-spacing: -0.02em;
-  color: #f6b83d;
+  color: var(--color-yellow);
   margin-left: 121px;
 }
 
@@ -84,7 +84,7 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.02em;
-  color: rgba(38, 38, 38, 0.5);
+  color: var(--color-dark-gray2);
   white-space: pre;
 }
 

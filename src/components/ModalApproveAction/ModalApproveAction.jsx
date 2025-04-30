@@ -5,7 +5,6 @@ import { logout } from "../../redux/auth/authOperations.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectToken } from "../../redux/auth/authSelectors.js";
-import { useEffect } from "react";
 
 const ModalApproveAction = ({ closeModal }) => {
   const dispatch = useDispatch();

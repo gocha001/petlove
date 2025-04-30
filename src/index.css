@@ -9,9 +9,29 @@
   -moz-osx-font-smoothing: grayscale;
 
   --color-black: #262626;
+  --color-black2: rgba(0, 0, 0, 0.5);
+  --color-black3: #2b2b2a;
   --color-yellow: #f6b83d;
+
+  --color-dark-yellow: #f9b020;
+
   --color-beige: #fff4df;
+  --color-dark-beige: #fbe7c1;
+
   --color-white: #ffffff;
+
+  --color-light-gray: #fbe7c1;
+  --color-light-gray2: rgba(255, 255, 255, 0.5);
+  --color-light-gray3: rgba(255, 255, 255, 0.15);
+  --color-gray: rgba(43, 43, 42, 0.4);
+  --color-dark-gray: rgba(38, 38, 38, 0.15);
+  --color-dark-gray2: rgba(38, 38, 38, 0.6);
+  --color-dark-gray3: rgba(38, 38, 38, 0.05);
+  --color-dark-gray4: rgba(38, 38, 38, 0.8);
+
+  --color-red: rgb(255, 0, 0);
+
+  --color-green: green;
 
   animation: 150ms ease-in;
   background-color: #f9f9f9;

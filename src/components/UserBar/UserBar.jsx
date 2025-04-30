@@ -19,7 +19,7 @@ const UserBar = () => {
           />
         ) : (
           <svg className={css.userBarIcon}>
-            <use href="/public/icons/icons.svg#icon-icon" />
+            <use href="/icons/icons.svg#icon-icon" />
           </svg>
         )}
         {!isMobile && <h2 className={css.userBarName}>{user.name}</h2>}

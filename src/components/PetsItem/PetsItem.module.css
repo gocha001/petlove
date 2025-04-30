@@ -1,7 +1,7 @@
 .petItem {
   display: flex;
   flex-direction: row;
-  border: 1px solid rgba(38, 38, 38, 0.1);
+  border: 1px solid var(--color-dark-gray);
   border-radius: 20px;
   width: 295px;
   height: 132px;
@@ -33,7 +33,7 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
-  color: #2b2b2a;
+  color: var(--color-black3);
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -65,7 +65,7 @@
   font-size: 10px;
   line-height: 1.4;
   letter-spacing: -0.02em;
-  color: rgba(38, 38, 38, 0.5);
+  color: var(--color-dark-gray2);
 }
 
 .petItemValue {
@@ -73,20 +73,17 @@
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: -0.02em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .petItemBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-direction: row; */
-  /* gap: 10px; */
   border-radius: 30px;
-  /* padding: 7px; */
   width: 30px;
   height: 30px;
-  background: #fff4df;
+  background: var(--color-beige);
   padding: 0;
   margin-left: 4px;
   margin-top: 12px;
@@ -111,4 +108,76 @@
 
 .hover {
   display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .petItem {
+    width: 305px;
+    height: 149px;
+  }
+  .petImg {
+    width: 75px;
+    height: 75px;
+    border-radius: 40px;
+    margin-top: 22px;
+  }
+  .petItemContainer {
+    width: 158px;
+    height: 104px;
+    margin-top: 22px;
+    gap: 12px;
+  }
+  .petItemTitle {
+    width: 158px;
+  }
+  .petItemInfo {
+    width: 158px;
+  }
+  .petItemBtn {
+    width: 32px;
+    height: 32px;
+    margin-left: -2px;
+  }
+  .petItemIcon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .petItem {
+    width: 440px;
+    height: 130px;
+  }
+  .petImg {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .petItemContainer {
+    width: 243px;
+    height: 162px;
+    margin-top: 34px;
+    margin-left: 25px;
+    gap: 12px;
+  }
+  .petItemTitle {
+    width: 243px;
+  }
+  .petItemInfo {
+    width: 243px;
+    height: 32px;
+  }
+  .petItemBtn {
+    width: 38px;
+    height: 38px;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .petItemIcon {
+    width: 38px;
+    height: 38px;
+  }
 }

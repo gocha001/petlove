@@ -365,7 +365,8 @@ const NoticesFilters = () => {
                   <use href="/icons/icons.svg#icon-x" />
                 </svg>
               </button>
-            )}
+            )}{" "}
+            <p className={css.error}>{errors.popular?.message}</p>
           </label>
 
           <label
@@ -417,7 +418,8 @@ const NoticesFilters = () => {
                   <use href="/icons/icons.svg#icon-x" />
                 </svg>
               </button>
-            )}
+            )}{" "}
+            <p className={css.error}>{errors.price?.message}</p>
           </label>
         </div>
       </form>

@@ -1,10 +1,8 @@
 import "./App.css";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import Loader from "./components/Loader/Loader.jsx";
 import { lazy, Suspense } from "react";
-// import PrivateRoute from "./components/PrivateRoute.jsx";
-// import RestrictedRoute from "./components/RestrictedRoute.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: 1px solid var(--color-dark-gray);
   border-radius: 30px;
   width: 119px;
   height: 48px;
@@ -20,19 +20,19 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
   white-space: nowrap;
 }
 
 .homeNavLink:hover {
-  border: 1px solid #f6b83d;
+  border: 1px solid var(--color-yellow);
 }
 
 .navLink {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--color-light-gray3);
   border-radius: 30px;
   width: 119px;
   height: 48px;
@@ -40,17 +40,17 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--color-white);
   white-space: nowrap;
 }
 
 .navLink:hover {
-  background: #fff4df;
-  color: #f6b83d;
+  background: var(--color-beige);
+  color: var(--color-yellow);
 }
 
 .navActive {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--color-light-gray2);
 }
 
 @media screen and (min-width: 768px) {
@@ -89,11 +89,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    border: 1px solid rgba(38, 38, 38, 0.15);
+    border: 1px solid var(--color-dark-gray);
     border-radius: 30px;
     padding: 15px 20px;
     height: 50px;
-    color: #262626;
+    color: var(--color-black);
     white-space: nowrap;
     text-decoration: none;
     transition: border-color 0.3s ease-in-out;
@@ -102,7 +102,7 @@
   .navLink:focus,
   .navLink:active {
     outline: none;
-    color: black !important;
+    color: var(--color-black) !important;
   }
 
   .navLink:hover {
@@ -118,7 +118,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color-light-gray2);
     border-radius: 30px;
     padding: 15px 20px;
     height: 50px;
@@ -127,10 +127,10 @@
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: -0.03em;
-    color: #fff;
+    color: var(--color-white);
   }
 
   .homeNavLink:hover {
-    border: 1px solid rgba(148, 139, 139, 0.4);
+    border: 1px solid var(--color-gray);
   }
 }

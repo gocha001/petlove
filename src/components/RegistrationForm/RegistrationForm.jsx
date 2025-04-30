@@ -235,7 +235,7 @@ const RegistrationForm = () => {
                 </svg>
               ) : (
                 <svg className={css.passwordIcon}>
-                  <use href="/public/icons/icons.svg#icon-eye-off" />
+                  <use href="/icons/icons.svg#icon-eye-off" />
                 </svg>
               )}
             </button>

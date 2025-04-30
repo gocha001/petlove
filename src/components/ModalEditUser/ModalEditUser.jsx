@@ -9,41 +9,37 @@ import {
   uploadImageToCloudinary,
 } from "../../redux/auth/authOperations";
 import { selectUser } from "../../redux/auth/authSelectors";
+import { useFilledInput } from "../../utils/useFilledInput";
 
 const editUserSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
   email: yup
     .string()
     .required("Email is required")
-    .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, "Invalid email"),
-  phone: yup.string().matches(/^\+38\d{10}$/, "Invalid phone"),
-  avatar: yup.string().nullable(),
-  // .matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, "Invalid URL")
-  // .test("is-url-if-present", "Invalid URL", (value) => {
-  //   if (!value) return true;
-  //   return /^https?:\/\/.*\.(png|jpg|jpeg|gif|bmp|webp)$/.test(value);
-  // }),
+    .matches(
+      /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,
+      "Email is not valid"
+    ),
+  phone: yup.string().matches(/^\+38\d{10}$/, "Phone is not valid"),
+  avatar: yup
+    .string()
+    .nullable()
+    .matches(
+      /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
+      "Avatar is not valid"
+    ),
 });
-// if (
-//   avatarUrl &&
-//   !/^https?:\/\/.*\.(png|jpg|jpeg|gif|bmp|webp)$/.test(avatarUrl)
-// ) {
-//   console.error("Invalid avatar URL");
-//   return;
-// }
 
 const ModalEditUser = ({ closeModal }) => {
   const dispatch = useDispatch();
   const defaultValues = useSelector(selectUser);
   const [preview, setPreview] = useState(defaultValues?.avatar || null);
-  const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
-  console.log(defaultValues);
-  // const [avatar, setAvatar] = useState(null);
 
   const {
     register,
     handleSubmit,
+    watch,
     setValue,
     reset,
     formState: { errors },
@@ -52,41 +48,49 @@ const ModalEditUser = ({ closeModal }) => {
     defaultValues,
   });
 
+  const avatarValue = watch("avatar");
+  const nameValue = watch("name");
+  const emailValue = watch("email");
+  const phoneValue = watch("phone");
+
+  const isAvatarFilled = useFilledInput(avatarValue);
+  const isNameFilled = useFilledInput(nameValue);
+  const isEmailFilled = useFilledInput(emailValue);
+  const isPhoneFilled = useFilledInput(phoneValue);
+
   useEffect(() => {
     reset(defaultValues);
     setPreview(defaultValues?.avatar || null);
   }, [defaultValues, reset]);
 
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
     const newFile = e.target.files[0];
-    if (newFile) {
-      setFile(newFile);
-      setPreview(URL.createObjectURL(newFile));
+    if (!newFile) return;
+    setLoading(true);
+
+    try {
+      const url = await uploadImageToCloudinary(newFile);
+      setValue("avatar", url);
+      setPreview(url);
+    } catch (error) {
+      console.error("Upload failed", error);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  const handleManualChange = (e) => {
+    setValue("avatar", e.target.value);
+    setPreview(e.target.value);
   };
 
   const onSubmit = async (data) => {
     setLoading(true);
-    console.log(loading);
     try {
-      console.log(defaultValues.avatar);
-      let avatarUrl = defaultValues.avatar;
-      console.log(avatarUrl);
-      if (file) {
-        avatarUrl = await uploadImageToCloudinary(file);
-      }
-
-      const updatedUser = {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        avatar: avatarUrl,
-      };
-
-      dispatch(editUser(updatedUser));
+      dispatch(editUser(data));
       closeModal();
-    } catch (err) {
-      console.error("Failed to submit:", err.message);
+    } catch (error) {
+      console.error("Failed to submit:", error);
     } finally {
       setLoading(false);
     }
@@ -117,7 +121,14 @@ const ModalEditUser = ({ closeModal }) => {
             id="avatarUpload"
           />
           <div className={css.btnBlock}>
-            <div className={css.url}>{preview}</div>
+            <input
+              type="text"
+              value={watch("avatar") || ""}
+              {...register("avatar")}
+              onChange={handleManualChange}
+              onClick={(e) => e.stopPropagation()}
+              className={`${css.url} ${isAvatarFilled && css.filled}`}
+            />
             <label htmlFor="avatarUpload" className={css.uploadBtn}>
               <span>Upload photo</span>
               <svg className={css.uploadIcon}>
@@ -125,6 +136,9 @@ const ModalEditUser = ({ closeModal }) => {
               </svg>
             </label>
           </div>
+          {errors.avatar && (
+            <p className={css.errorAvatar}>{errors.avatar?.message}</p>
+          )}
         </div>
 
         <div className={css.inputs}>
@@ -132,28 +146,32 @@ const ModalEditUser = ({ closeModal }) => {
             <input
               {...register("name")}
               placeholder="Name"
-              className={css.input}
+              className={`${css.input} ${isNameFilled && css.filled}`}
             />
-            <p className={css.error}>{errors.name?.message}</p>
+            {errors.name && <p className={css.error}>{errors.name?.message}</p>}
           </div>
           <div className={css.inputGroup}>
             <input
               {...register("email")}
               placeholder="Email"
-              className={css.input}
+              className={`${css.input} ${isEmailFilled && css.filled}`}
             />
-            <p className={css.error}>{errors.email?.message}</p>
+            {errors.email && (
+              <p className={css.error}>{errors.email?.message}</p>
+            )}
           </div>
           <div className={css.inputGroup}>
             <input
               {...register("phone")}
               placeholder="Phone"
-              className={css.input}
+              className={`${css.input} ${isPhoneFilled && css.filled}`}
             />
-            <p className={css.error}>{errors.phone?.message}</p>
+            {errors.phone && (
+              <p className={css.error}>{errors.phone?.message}</p>
+            )}
           </div>
         </div>
-        <button type="submit" className={css.editBtn}>
+        <button type="submit" className={css.editBtn} disabled={loading}>
           Go to profile
         </button>
       </form>

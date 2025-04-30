@@ -14,7 +14,7 @@ export const registration = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const response = await Api.post("users/signup", credentials);
-      console.log(response.data);
+
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
@@ -44,7 +44,7 @@ export const login = createAsyncThunk(
 
 export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
-    const response = await Api.post("users/signout");
+    await Api.post("users/signout");
   } catch (error) {
     const message =
       error.response?.data?.message || error.message || "Unknown error";
@@ -57,7 +57,7 @@ export const currentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await Api.get(`users/current`);
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response?.data);
@@ -70,7 +70,7 @@ export const fullUser = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await Api.get(`users/current/full`);
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
       const message =
@@ -85,7 +85,7 @@ export const editUser = createAsyncThunk(
   async (userData, thunkAPI) => {
     try {
       const { data } = await Api.patch(`users/current/edit`, userData);
-      console.log(data);
+
       return data;
     } catch (error) {
       const message = error.data?.message || error.message || "Unknown error";
@@ -109,7 +109,7 @@ export const uploadImageToCloudinary = async (file) => {
   formData.append("upload_preset", uploadPreset);
 
   const { data } = await axios.post(url, formData);
-  console.log(data.secure_url);
+
   return data.secure_url;
 };
 
@@ -118,7 +118,7 @@ export const addPets = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await Api.post(`users/current/pets/add`, data);
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
       const message =
@@ -132,9 +132,8 @@ export const deletePets = createAsyncThunk(
   "auth/deletePets",
   async (id, thunkAPI) => {
     try {
-      console.log(id);
       const response = await Api.delete(`users/current/pets/remove/${id}`);
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
       const message =

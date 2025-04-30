@@ -59,7 +59,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color-black2);
   z-index: 100;
 }
 
@@ -125,10 +125,9 @@
   top: 0;
   right: -100%;
   width: 218px;
-  /* height: 812px; */
   height: 100vh;
-  background: white;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  background: var(--color-white);
+  box-shadow: -2px 0 10px var(--color-black2);
   transition: right 0.3s ease-in-out;
   display: flex;
   flex-direction: column;

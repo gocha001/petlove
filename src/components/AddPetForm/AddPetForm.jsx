@@ -4,7 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import {
   addPets,
   uploadImageToCloudinary,
@@ -78,7 +78,6 @@ const AddPetForm = () => {
     if (!newFile) return;
     setLoading(true);
 
-    console.log(newFile);
     try {
       const url = await uploadImageToCloudinary(newFile);
       setValue("imgURL", url);
@@ -105,12 +104,8 @@ const AddPetForm = () => {
 
   const onSubmit = async (data) => {
     setLoading(true);
-    console.log("submit", data);
+
     try {
-      const [dd, mm, yyyy] = data.birthday.split(".");
-      const formattedDate = `${yyyy}-${mm}-${dd}`;
-      console.log("Formatted date for backend:", formattedDate);
-      console.log("submit", data);
       dispatch(addPets(data));
       reset();
       setPreview("");

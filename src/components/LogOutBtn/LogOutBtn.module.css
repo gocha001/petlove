@@ -24,47 +24,45 @@
   padding: 12px 28px;
   width: 114px;
   height: 42px;
-  /* background: #fff4df; */
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  /* color: #f6b83d; */
   white-space: nowrap;
 }
 
 .logOutBtnProfile {
-  background: #fff4df;
-  color: #f6b83d;
+  background: var(--color-beige);
+  color: var(--color-yellow);
   border: none;
 }
 
 .logOutBtnProfile:hover {
-  background: #f9b020;
-  color: #262626;
+  background: var(--color-dark-yellow);
+  color: var(--color-black);
 }
 
 .logOutBtn:hover {
-  background: #fff4df;
-  color: #f6b83d;
+  background: var(--color-beige);
+  color: var(--color-yellow);
 }
 
 .logOutBtn {
-  background: #f6b83d;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: var(--color-yellow);
+  border: 1px solid var();
   border-radius: 30px;
-  color: #fff;
+  color: var(--color-light-gray2);
 }
 
 .logOutBtnHome {
-  background: #f6b83d;
-  color: #fff;
-  border: 1px solid #fff;
+  background: var(--color-yellow);
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
 }
 
 .logOutBtnHome:hover {
-  background: #f9b020;
+  background: var(--color-dark-yellow);
 }
 
 .logOutModal {
@@ -73,7 +71,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color-black2);
   z-index: 100;
 }
 

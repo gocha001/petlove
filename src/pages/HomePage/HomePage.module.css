@@ -43,7 +43,7 @@
 }
 
 .homeSpan {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-light-gray2);
 }
 
 .homeText {

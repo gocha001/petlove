@@ -14,7 +14,6 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  /* gap: 131px; */
   width: 295px;
   height: 38px;
 }
@@ -23,7 +22,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
-  color: #2b2b2a;
+  color: var(--color-black3);
   white-space: nowrap;
 }
 

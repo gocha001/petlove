@@ -1,7 +1,5 @@
 .petsList {
   display: flex;
-  /* flex-direction: column; */
-  /* justify-content: center; */
   width: 295px;
 }
 
@@ -11,4 +9,27 @@
   justify-content: center;
   width: 295px;
   gap: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .petsList {
+    width: 624px;
+  }
+  .petsListContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 624px;
+    gap: 14px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .petsList {
+    width: 440px;
+  }
+  .petsListContainer {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+  }
 }

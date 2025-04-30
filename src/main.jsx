@@ -1,4 +1,3 @@
-// import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -11,7 +10,6 @@ import Loader from "./components/Loader/Loader.jsx";
 import AuthProvider from "./utils/AuthProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
   <Provider store={store}>
     <PersistGate loading={<Loader />} persistor={persistor}>
       <AuthProvider>
@@ -21,5 +19,4 @@ createRoot(document.getElementById("root")).render(
       </AuthProvider>
     </PersistGate>
   </Provider>
-  // </StrictMode>
 );

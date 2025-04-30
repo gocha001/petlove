@@ -53,6 +53,7 @@ const noticesSlice = createSlice({
       state.location = action.payload.location;
       state.byPrice = action.payload.price;
       state.byPopularity = action.payload.popularity;
+      state.page = 1;
     },
 
     changePageNotices: (state, action) => {
@@ -85,24 +86,20 @@ const noticesSlice = createSlice({
       .addCase(fetchNoticesId.fulfilled, (state, action) => {
         state.isLoading = false;
         state.noticeId = action.payload;
-        console.log(state.noticeId);
       })
       .addCase(favoritesAdd.fulfilled, (state, action) => {
         state.isLoading = false;
         state.favoritesId = action.payload;
-        console.log(state.favoritesId);
       })
       .addCase(favoritesDelete.fulfilled, (state, action) => {
         state.isLoading = false;
         state.favoritesId = action.payload;
-        console.log(state.favoritesId);
       })
       .addCase(currentUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.favoritesId = action.payload.noticesFavorites.map(
           (item) => item._id
         );
-        console.log(state.favoritesId);
       })
       .addMatcher(
         isAnyOf(

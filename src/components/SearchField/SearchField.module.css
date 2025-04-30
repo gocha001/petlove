@@ -5,7 +5,6 @@
   align-items: center;
   width: 100%;
   overflow: hidden !important;
-  /* background-color: #fff; */
 }
 
 .searchForm {
@@ -15,14 +14,13 @@
   padding-left: 12px;
   flex-direction: row;
   gap: 10px;
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: 1px solid var(--color-dark-gray);
   border-radius: 30px;
   width: 100%;
   width: 335px;
   height: 42px;
-  color: rgba(38, 38, 38, 0.5);
+  color: var(--color-dark-gray2);
   overflow: hidden !important;
-  /* background-color: #fff; */
 }
 
 .searchFormNotice {
@@ -37,7 +35,7 @@
   width: 100%;
   width: 295px;
   height: 42px;
-  color: rgba(38, 38, 38, 0.5);
+  color: var(--color-dark-gray2);
   overflow: hidden !important;
 }
 
@@ -56,11 +54,11 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .searchInput::placeholder {
-  color: #262626;
+  color: var(--color-black);
 }
 
 .searchInput:-webkit-autofill,
@@ -119,5 +117,5 @@
 }
 
 .error {
-  color: red;
+  color: var(--color-red);
 }

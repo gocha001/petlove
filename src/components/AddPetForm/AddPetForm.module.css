@@ -7,7 +7,7 @@
   width: 100%;
   max-width: 335px;
   height: 489px;
-  background: #fff;
+  background: var(--color-white);
   gap: 24px;
 }
 
@@ -27,14 +27,14 @@
   font-size: 28px;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .addPetFormSpan {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
-  color: rgba(43, 43, 42, 0.4);
+  color: var(--color-gray);
 }
 
 .addPetForm {
@@ -108,7 +108,7 @@
   justify-content: center;
   flex-direction: row;
   gap: 5px;
-  background: #fff4df;
+  background: var(--color-beige);
   padding: 12px;
   border-radius: 30px;
   cursor: pointer;
@@ -118,7 +118,7 @@
   font-size: 12px;
   line-height: 1.33333;
   letter-spacing: -0.02em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .uploadIcon {
@@ -130,7 +130,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: 1px solid var(--color-dark-gray);
   border-radius: 30px;
   padding-left: 10px;
   width: 170px;
@@ -139,7 +139,7 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.02em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .addPetInfoCont {
@@ -153,7 +153,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: 1px solid var(--color-dark-gray);
   border-radius: 30px;
   padding-left: 12px;
   width: 295px;
@@ -162,7 +162,7 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .addPetInfo {
@@ -190,7 +190,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: 1px solid var(--color-dark-gray);
   border-radius: 30px;
   padding-left: 12px;
   width: 144px;
@@ -199,7 +199,7 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
   width: 100%;
   padding-right: 36px;
 }
@@ -213,27 +213,30 @@
   height: 18px;
   pointer-events: none;
   fill: none;
-  stroke: #262626;
+  stroke: var(--color-black);
 }
 
 .errorUrl {
-  color: red;
+  color: var(--color-red);
   width: 295px;
   font-size: 12px;
   text-align: left;
+  margin-bottom: -14px;
 }
 
 .error {
-  color: red;
+  color: var(--color-red);
   font-size: 12px;
   text-align: left;
+  margin-bottom: -14px;
 }
 
 .errorBirthday {
   width: 144px;
-  color: red;
+  color: var(--color-red);
   font-size: 12px;
   text-align: left;
+  margin-bottom: -14px;
 }
 
 .typeContainer {
@@ -246,7 +249,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: 1px solid var(--color-dark-gray);
   border-radius: 30px;
   padding-left: 12px;
   width: 143px;
@@ -262,7 +265,7 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .species:focus {
@@ -276,11 +279,11 @@
   justify-content: center;
   position: absolute;
   top: 46px;
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: 1px solid var(--color-dark-gray);
   border-radius: 15px;
   width: 143px;
   height: 78px;
-  background: #fff;
+  background: var(--color-white);
 }
 
 .options {
@@ -294,7 +297,7 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: rgba(38, 38, 38, 0.6);
+  color: var(--color-dark-gray2);
   text-align: left;
 }
 
@@ -315,16 +318,16 @@
   border-radius: 30px;
   width: 100px;
   height: 42px;
-  background: rgba(38, 38, 38, 0.05);
+  background: var(--color-dark-gray);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .addPetBack:hover {
-  background: rgba(38, 38, 38, 0.09);
+  background: var(--color-dark-gray);
 }
 
 .addPetBtn {
@@ -334,16 +337,16 @@
   border-radius: 30px;
   width: 100px;
   height: 42px;
-  background: #f6b83d;
+  background: var(--color-yellow);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .addPetBtn:hover {
-  background: #f9b020;
+  background: var(--color-dark-yellow);
 }
 
 input:-webkit-autofill {
@@ -358,21 +361,21 @@ input {
 
 input:focus,
 input.filled {
-  border: 1px solid #f6b83d;
+  border: 1px solid var(--color-yellow);
 }
 
 input {
   outline: none;
-  border: 1px solid rgba(38, 38, 38, 0.15); /* або свій дефолтний колір */
+  border: 1px solid var(--color-dark-gray);
   transition: border-color 0.2s;
 }
 
 input:hover {
-  border-color: #f6b83d; /* колір при ховері */
+  border-color: var(--color-yellow);
 }
 
 input:focus {
-  border-color: #f6b83d; /* колір при фокусі */
+  border-color: var(--color-yellow);
   outline: none;
 }
 
